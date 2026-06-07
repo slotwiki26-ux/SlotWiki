@@ -162,8 +162,8 @@ function openModal(slug) {
       </div>
       <div class="modal-footer">
         ${releaseLine}
-        <a href="${slot.provider_website}" class="btn-provider" target="_blank" rel="noopener noreferrer">
-          Visit Provider ↗
+        <a href="${slot.hacksaw_url}" class="btn-demo-play" target="_blank" rel="noopener noreferrer">
+          Demo Play
         </a>
       </div>
     </div>`;
