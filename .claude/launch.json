@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "SlotWiki",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "3333", "/Users/noahgraff/Desktop/SlotWiki"],
+      "port": 3333
+    }
+  ]
+}

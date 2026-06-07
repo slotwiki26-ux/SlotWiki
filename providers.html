@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Providers — Slot Wiki</title>
+  <meta name="description" content="Browse all slot game providers on Slot Wiki. View provider profiles, scores, and game libraries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🎰</div>
+      Slot<span>Wiki</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="providers.html" class="active">Providers</a>
+      <a href="terms.html">Responsible Gambling</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Featured Provider: Hacksaw Gaming -->
+  <section id="hacksaw" class="provider-hero">
+    <div class="provider-hero-inner">
+      <div class="provider-logo-wrap" id="hacksaw-logo-wrap">
+        <span style="font-size:36px">🎮</span>
+      </div>
+      <div class="provider-info">
+        <h1 class="provider-name">Hacksaw Gaming</h1>
+        <div class="provider-score">⭐ 9.2 / 10</div>
+        <p class="provider-description" id="hacksaw-desc"></p>
+        <a href="https://www.hacksawgaming.com" class="btn-visit" target="_blank" rel="noopener noreferrer">
+          Visit hacksawgaming.com ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-content">
+    <!-- Search for Hacksaw slots -->
+    <div class="search-wrap" style="max-width:480px; margin-bottom:24px;">
+      <input id="hacksaw-search" class="search-input" type="search"
+        placeholder="Search Hacksaw slots…" autocomplete="off">
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <div class="section-header">
+      <h2 class="section-title">Hacksaw Gaming Slots</h2>
+      <span class="section-count" id="hacksaw-count"></span>
+    </div>
+    <div class="slot-grid" id="hacksaw-grid"></div>
+
+    <!-- More Providers -->
+    <div style="margin-top: 56px;">
+      <div class="section-header">
+        <h2 class="section-title">More Providers</h2>
+        <span style="font-size:13px; color:var(--text-muted);">Coming soon</span>
+      </div>
+      <p style="color:var(--text-muted); font-size:14px; margin-bottom:24px;">
+        Additional providers are being added. Check back soon for expanded coverage.
+      </p>
+      <div class="providers-grid" id="more-providers-grid"></div>
+    </div>
+  </div>
+</main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="modal"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Slot Wiki. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="terms.html#responsible-gambling">Responsible Gambling</a>
+    </div>
+    <p class="footer-disclaimer">
+      Slot Wiki is an independent, informational resource. We do not offer gambling services, accept deposits, or facilitate wagering of any kind.
+      Gambling can be addictive — if you need help, visit <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a>
+      or call <strong>0808 8020 133</strong>.
+    </p>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+  initModal();
+
+  // Fill provider description
+  const provider = PROVIDERS.find(p => p.id === "hacksaw");
+  if (provider) {
+    document.getElementById("hacksaw-desc").textContent = provider.description;
+  }
+
+  // Render Hacksaw slots
+  const hacksawSlots = getSlotsByProvider("hacksaw");
+  renderGrid(hacksawSlots, "hacksaw-grid", "hacksaw-count");
+
+  // Search within Hacksaw slots
+  const searchInput = document.getElementById("hacksaw-search");
+  let debounceTimer = null;
+  searchInput.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const results = searchSlots(searchInput.value, "hacksaw");
+      renderGrid(results, "hacksaw-grid", "hacksaw-count");
+    }, 180);
+  });
+
+  // Coming-soon providers grid
+  const comingSoon = [
+    { name: "Pragmatic Play", icon: "🃏", count: "200+" },
+    { name: "Play'n GO", icon: "🃏", count: "200+" },
+    { name: "NetEnt", icon: "🎲", count: "300+" },
+    { name: "Big Time Gaming", icon: "⚡", count: "50+" },
+    { name: "Nolimit City", icon: "🔥", count: "60+" },
+    { name: "Push Gaming", icon: "🚀", count: "40+" },
+    { name: "Relax Gaming", icon: "🎯", count: "100+" },
+    { name: "Thunderkick", icon: "⚡", count: "30+" },
+  ];
+
+  document.getElementById("more-providers-grid").innerHTML = comingSoon.map(p => `
+    <div class="provider-card">
+      <div class="provider-card-logo">${p.icon}</div>
+      <div class="provider-card-info">
+        <div class="provider-card-name">${p.name}</div>
+        <div class="provider-card-count">${p.count} games</div>
+      </div>
+      <span class="coming-soon-badge">Soon</span>
+    </div>
+  `).join("");
+</script>
+</body>
+</html>

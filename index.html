@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slot Wiki — Your Slot Game Encyclopedia</title>
+  <meta name="description" content="Slot Wiki is a free, informational encyclopedia of slot games. Browse RTP values, themes, features, and providers — no sign-up required.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🎰</div>
+      Slot<span>Wiki</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="providers.html">Providers</a>
+      <a href="terms.html">Responsible Gambling</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Search -->
+<section class="hero">
+  <h1>The <em>Slot Wiki</em><br>Encyclopedia</h1>
+  <p>Informational data on 90+ slot games — RTP values, mechanics, themes, and more. No sign-ups. No affiliate links.</p>
+  <div class="search-wrap">
+    <input
+      id="search-input"
+      class="search-input"
+      type="search"
+      placeholder="Search by name, theme, or tag — try &quot;pirate&quot; or &quot;rat&quot;"
+      aria-label="Search slots"
+      autocomplete="off"
+    >
+    <span class="search-icon">🔍</span>
+  </div>
+  <p class="search-hint">Searches names, descriptions, and theme tags.</p>
+</section>
+
+<!-- Provider Filter -->
+<div class="filter-bar">
+  <span class="filter-label">Provider</span>
+  <div id="provider-chips">
+    <button class="chip" data-provider="hacksaw">Hacksaw Gaming</button>
+  </div>
+</div>
+
+<!-- Featured Slots -->
+<main class="page-content">
+  <div class="section-header" id="featured-header">
+    <h2 class="section-title">Featured Slots</h2>
+    <span class="section-count" id="featured-count"></span>
+  </div>
+  <div class="slot-grid" id="featured-grid"></div>
+
+  <div style="margin-top: 48px;">
+    <div class="section-header">
+      <h2 class="section-title" id="all-label">All Slots</h2>
+      <span class="section-count" id="all-count"></span>
+    </div>
+    <div class="slot-grid" id="all-grid"></div>
+  </div>
+</main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="modal"></div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Slot Wiki. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="providers.html">Providers</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="terms.html#responsible-gambling">Responsible Gambling</a>
+    </div>
+    <p class="footer-disclaimer">
+      Slot Wiki is an independent, informational resource. We do not offer gambling services, accept deposits, or facilitate wagering of any kind.
+      All slot information is provided for educational purposes only. Gambling can be addictive — please play responsibly.
+      If you or someone you know has a problem with gambling, visit <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a>
+      or call the National Gambling Helpline: <strong>0808 8020 133</strong>.
+    </p>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+  initModal();
+
+  // Render featured slots
+  renderGrid(getFeaturedSlots(), "featured-grid", "featured-count");
+
+  // Render all slots (non-featured, below the fold)
+  const nonFeatured = SLOTS.filter(s => !s.featured);
+  renderGrid(nonFeatured, "all-grid", "all-count");
+
+  // Search overrides both grids
+  const searchInput = document.getElementById("search-input");
+  const featuredHeader = document.getElementById("featured-header");
+  const featuredSection = document.querySelector("[id=featured-grid]").parentElement;
+
+  let debounceTimer = null;
+  let activeProvider = null;
+
+  function updateResults() {
+    const q = searchInput.value.trim();
+    const chips = document.querySelectorAll("#provider-chips .chip");
+
+    if (q || activeProvider) {
+      // Hide featured, show unified search results
+      featuredHeader.style.display = "none";
+      document.getElementById("featured-grid").style.display = "none";
+      document.getElementById("all-label").textContent = q ? `Results for "${q}"` : "All Slots";
+      const results = searchSlots(q, activeProvider);
+      renderGrid(results, "all-grid", "all-count");
+    } else {
+      // Restore default view
+      featuredHeader.style.display = "";
+      document.getElementById("featured-grid").style.display = "";
+      document.getElementById("all-label").textContent = "All Slots";
+      renderGrid(getFeaturedSlots(), "featured-grid", "featured-count");
+      renderGrid(SLOTS.filter(s => !s.featured), "all-grid", "all-count");
+    }
+  }
+
+  searchInput.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(updateResults, 180);
+  });
+
+  document.querySelectorAll("#provider-chips .chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const val = chip.dataset.provider;
+      activeProvider = activeProvider === val ? null : val;
+      chip.classList.toggle("active", activeProvider === val);
+      updateResults();
+    });
+  });
+</script>
+</body>
+</html>

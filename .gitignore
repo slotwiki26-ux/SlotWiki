@@ -1,0 +1,6 @@
+.DS_Store
+*.xlsx
+*.pdf
+slot_data_parsed.json
+Hacksaw Image/
+.claude/settings.local.json
