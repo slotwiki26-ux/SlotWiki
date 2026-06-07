@@ -36,87 +36,27 @@
 
   <div class="provider-pick-grid">
 
-    <div class="provider-pick-card pick-hacksaw" id="pick-hacksaw" role="button" tabindex="0" aria-label="Browse Hacksaw Gaming slots">
+    <a href="hacksaw.html" class="provider-pick-card pick-hacksaw" aria-label="Browse Hacksaw Gaming slots">
       <div class="pick-content">
         <div class="pick-icon">🎮</div>
         <div class="pick-name">Hacksaw Gaming</div>
         <div class="pick-score">⭐ 9.2 / 10</div>
-        <div class="pick-count" id="hacksaw-pick-count">— slots</div>
-        <span class="pick-cta">Browse games ↓</span>
+        <div class="pick-count" id="hacksaw-pick-count">90 slots</div>
+        <span class="pick-cta">Browse games →</span>
       </div>
-    </div>
+    </a>
 
-    <div class="provider-pick-card pick-pragmatic" id="pick-pragmatic" role="button" tabindex="0" aria-label="Browse Pragmatic Play slots">
+    <a href="pragmatic.html" class="provider-pick-card pick-pragmatic" aria-label="Browse Pragmatic Play slots">
       <div class="pick-content">
         <div class="pick-icon">🎯</div>
         <div class="pick-name">Pragmatic Play</div>
         <div class="pick-score">⭐ 9.4 / 10</div>
-        <div class="pick-count" id="pragmatic-pick-count">— slots</div>
-        <span class="pick-cta">Browse games ↓</span>
+        <div class="pick-count" id="pragmatic-pick-count">168 slots</div>
+        <span class="pick-cta">Browse games →</span>
       </div>
-    </div>
+    </a>
 
   </div>
-
-  <!-- ── Hacksaw Gaming Games ── -->
-  <section id="hacksaw-section" class="provider-games-section" style="margin-top:64px;">
-    <div class="provider-games-header">
-      <button class="provider-games-back" onclick="scrollToTop()">↑ Back to providers</button>
-      <div>
-        <div class="provider-games-title">
-          <span class="hacksaw-accent">Hacksaw Gaming</span> — Slot Library
-        </div>
-      </div>
-      <div style="margin-left:auto; display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <div class="search-wrap" style="max-width:340px; margin:0;">
-          <input id="hacksaw-search" class="search-input" type="search"
-            placeholder="Search Hacksaw slots…" autocomplete="off"
-            style="padding:10px 44px 10px 18px; font-size:14px;">
-          <span class="search-icon" style="font-size:15px;">🔍</span>
-        </div>
-        <a href="https://www.hacksawgaming.com" class="btn-visit" target="_blank" rel="noopener noreferrer" style="white-space:nowrap;">
-          Visit site ↗
-        </a>
-      </div>
-    </div>
-    <div class="page-content" style="padding-top:0;">
-      <div class="section-header">
-        <h2 class="section-title">All Hacksaw Gaming Slots</h2>
-        <span class="section-count" id="hacksaw-count"></span>
-      </div>
-      <div class="slot-grid" id="hacksaw-grid"></div>
-    </div>
-  </section>
-
-  <!-- ── Pragmatic Play Games ── -->
-  <section id="pragmatic-section" class="provider-games-section" style="margin-top:32px;">
-    <div class="provider-games-header">
-      <button class="provider-games-back" onclick="scrollToTop()">↑ Back to providers</button>
-      <div>
-        <div class="provider-games-title">
-          <span class="pragmatic-accent">Pragmatic Play</span> — Slot Library
-        </div>
-      </div>
-      <div style="margin-left:auto; display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <div class="search-wrap" style="max-width:340px; margin:0;">
-          <input id="pragmatic-search" class="search-input" type="search"
-            placeholder="Search Pragmatic Play slots…" autocomplete="off"
-            style="padding:10px 44px 10px 18px; font-size:14px;">
-          <span class="search-icon" style="font-size:15px;">🔍</span>
-        </div>
-        <a href="https://www.pragmaticplay.com" class="btn-visit" target="_blank" rel="noopener noreferrer" style="white-space:nowrap;">
-          Visit site ↗
-        </a>
-      </div>
-    </div>
-    <div class="page-content" style="padding-top:0;">
-      <div class="section-header">
-        <h2 class="section-title">All Pragmatic Play Slots</h2>
-        <span class="section-count" id="pragmatic-count"></span>
-      </div>
-      <div class="slot-grid" id="pragmatic-grid"></div>
-    </div>
-  </section>
 
   <!-- ── More Providers ── -->
   <div class="page-content" style="padding-top:56px;">
@@ -131,11 +71,6 @@
   </div>
 
 </main>
-
-<!-- Modal -->
-<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
-  <div class="modal" id="modal"></div>
-</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -153,59 +88,7 @@
   </div>
 </footer>
 
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
 <script>
-  initModal();
-
-  // Populate pick card counts + descriptions
-  const hacksawSlots = getSlotsByProvider("hacksaw");
-  const pragmaticSlots = getSlotsByProvider("pragmatic");
-  const hsProvider = PROVIDERS.find(p => p.id === "hacksaw");
-  const ppProvider = PROVIDERS.find(p => p.id === "pragmatic");
-
-  document.getElementById("hacksaw-pick-count").textContent = hacksawSlots.length + " slots";
-  document.getElementById("pragmatic-pick-count").textContent = pragmaticSlots.length + " slots";
-
-  // Render grids
-  renderGrid(hacksawSlots, "hacksaw-grid", "hacksaw-count");
-  renderGrid(pragmaticSlots, "pragmatic-grid", "pragmatic-count");
-
-  // Click provider cards → smooth scroll to their section
-  function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  function scrollToTop() {
-    document.querySelector(".provider-picker-hero").scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  document.getElementById("pick-hacksaw").addEventListener("click", () => scrollToSection("hacksaw-section"));
-  document.getElementById("pick-pragmatic").addEventListener("click", () => scrollToSection("pragmatic-section"));
-
-  // Keyboard support for provider cards
-  document.getElementById("pick-hacksaw").addEventListener("keydown", e => {
-    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); scrollToSection("hacksaw-section"); }
-  });
-  document.getElementById("pick-pragmatic").addEventListener("keydown", e => {
-    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); scrollToSection("pragmatic-section"); }
-  });
-
-  // Search — Hacksaw
-  let hsTimer = null;
-  document.getElementById("hacksaw-search").addEventListener("input", function () {
-    clearTimeout(hsTimer);
-    hsTimer = setTimeout(() => renderGrid(searchSlots(this.value, "hacksaw"), "hacksaw-grid", "hacksaw-count"), 180);
-  });
-
-  // Search — Pragmatic
-  let ppTimer = null;
-  document.getElementById("pragmatic-search").addEventListener("input", function () {
-    clearTimeout(ppTimer);
-    ppTimer = setTimeout(() => renderGrid(searchSlots(this.value, "pragmatic"), "pragmatic-grid", "pragmatic-count"), 180);
-  });
-
-  // Coming-soon providers
   const comingSoon = [
     { name: "Play'n GO",        icon: "🃏", count: "200+" },
     { name: "NetEnt",           icon: "🎲", count: "300+" },
