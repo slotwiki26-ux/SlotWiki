@@ -426,6 +426,42 @@ const HACKSAW_RTP = {
   "Divine Drop":                       { rtp: "96.25%", volatility: "Medium" },
 };
 
+// Pragmatic Play hero images (1200x630) — sourced from pragmaticplay.com WP media API
+// 34/168 found automatically; remainder to be added manually
+const PP_HERO = {
+  "Sweet Bonanza 2500": "https://www.pragmaticplay.com/wp-content/uploads/2026/04/Sweet-Bonanza-2500_1200x630_EN.jpg",
+  "Sugar Rush Super Scatter": "https://www.pragmaticplay.com/wp-content/uploads/2026/01/Sugar-Rush-Super-Scatter_1200x630_EN.jpg",
+  "Gates of Hades": "https://www.pragmaticplay.com/wp-content/uploads/2025/11/Gates-of-Hades_1200x630_EN.jpg",
+  "Big Bass Bonanza 1000": "https://www.pragmaticplay.com/wp-content/uploads/2025/04/Big-Bass-Bonanza-1000_1200x630_EN.jpg",
+  "Starlight Princess Super Scatter": "https://www.pragmaticplay.com/wp-content/uploads/2025/10/Starlight-Princess-Super-Scatter_1200x630_EN.jpg",
+  "Bandit Megaways": "https://www.pragmaticplay.com/wp-content/uploads/2025/04/Bandit-Megaways_1200x630_EN-1.jpg",
+  "Big Bass Boxing Bonus Round": "https://www.pragmaticplay.com/wp-content/uploads/2025/06/Big-Bass-Boxing-Bonus-Round_1200x630_EN.jpg",
+  "Big Bass Football Bonanza": "https://www.pragmaticplay.com/wp-content/uploads/2026/05/Big-Bass-Football-Bonanza_1200x630_EN.jpg",
+  "Big Bass Reel Repeat": "https://www.pragmaticplay.com/wp-content/uploads/2025/09/Big-Bass-Reel-Repeat_1200x630_EN.jpg",
+  "Big Bass Splash 1000": "https://www.pragmaticplay.com/wp-content/uploads/2025/12/Big-Bass-Splash-1000_1200x630_EN.jpg",
+  "Big Bass Trophy Catch": "https://www.pragmaticplay.com/wp-content/uploads/2026/04/Big-Bass-Trophy-Catch_1200x630_EN.jpg",
+  "Fortune of Olympus": "https://www.pragmaticplay.com/wp-content/uploads/2025/12/Fortune-of-Olympus_1200x630_EN.jpg",
+  "Joker's Jewels Hold & Spin": "https://www.pragmaticplay.com/wp-content/uploads/2025/12/Jokers-Jewels-Hold-Spin_1200x630_EN.jpg",
+  "Mahjong Wins Super Scatter": "https://www.pragmaticplay.com/wp-content/uploads/2025/05/Mahjong-Wins-Super-Scatter_1200x630_EN.jpg",
+  "Sweet Bonanza Super Scatter": "https://www.pragmaticplay.com/wp-content/uploads/2025/09/Sweet-Bonanza-Super-Scatter_1200x630_EN.jpg",
+  "Wild West Gold Blazing Bounty": "https://www.pragmaticplay.com/wp-content/uploads/2025/06/Wild-West-Gold-Blazing-Bounty_1200x630_EN.jpg",
+  "Zombie School Megaways": "https://www.pragmaticplay.com/wp-content/uploads/2025/09/Zombie-School-Megaways_1200x630_EN.jpg",
+  "Aztec Smash": "https://www.pragmaticplay.com/wp-content/uploads/2025/01/Aztec-Smash_1200x630_EN-1.jpg",
+  "Book of Monsters": "https://www.pragmaticplay.com/wp-content/uploads/2025/03/Book-of-Monsters_1200x630_EN.jpg",
+  "Candy Rush": "https://www.pragmaticplay.com/wp-content/uploads/2026/05/Candy-Rush_1200x630_EN.jpg",
+  "Cyberheist City": "https://www.pragmaticplay.com/wp-content/uploads/2026/02/Cyberheist-City_1200x630_EN.jpg",
+  "Gem Fire Fortune": "https://www.pragmaticplay.com/wp-content/uploads/2025/09/Gem-Fire-Fortune_1200x630_EN.jpg",
+  "Jackpot Blaze": "https://www.pragmaticplay.com/wp-content/uploads/2025/09/Jackpot-Blaze_1200x630_EN.jpg",
+  "Jelly Express": "https://www.pragmaticplay.com/wp-content/uploads/2026/03/Jelly-Express_1200x630_EN.jpg",
+  "Mining Rush": "https://www.pragmaticplay.com/wp-content/uploads/2024/12/Mining-Rush_1200x630_EN.jpg",
+  "Money Stacks Megaways": "https://www.pragmaticplay.com/wp-content/uploads/2024/12/Money-Stacks-Megaways_1200x630_EN.jpg",
+  "Oracle of Gold": "https://www.pragmaticplay.com/wp-content/uploads/2025/11/Oracle-of-Gold_1200x630_EN.jpg",
+  "Rolling in Treasures": "https://www.pragmaticplay.com/wp-content/uploads/2026/02/Rolling-in-Treasures_1200x630_EN.jpg",
+  "Waves of Poseidon": "https://www.pragmaticplay.com/wp-content/uploads/2025/09/Waves-of-Poseidon_1200x630_EN-1.jpg",
+  "Wild Wild Pearls": "https://www.pragmaticplay.com/wp-content/uploads/2025/01/Wild-Wild-Pearls_1200x630_EN.jpg",
+  "Zeus vs Typhon": "https://www.pragmaticplay.com/wp-content/uploads/2025/11/Zeus-vs-Typhon_1200x630_EN.jpg",
+};
+
 // Hero image lookup — exact URLs scraped from hacksawgaming.com game pages
 const HACKSAW_HERO = {
   "red-rascal": "https://www-live.hacksawgaming.com/casino_thumbnails/2274_hero_RedRascal_Devices_Desktop.png",
@@ -2788,7 +2824,7 @@ const SLOTS = RAW_SLOTS.map((s) => {
       hacksaw_url: `https://www.pragmaticplay.com/en/games/${s.slug}/`,
       thumbnail_url: null,
       logo_url: null,
-      hero_url: null,
+      hero_url: PP_HERO[s.name] || null,
       features: [],
       bonus_games: [],
       bonus_buy_rtps: [],
