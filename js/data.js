@@ -426,6 +426,2262 @@ const HACKSAW_RTP = {
   "Divine Drop":                       { rtp: "96.25%", volatility: "Medium" },
 };
 
+// Features + bonus games lookup for Hacksaw slots
+const HACKSAW_FEATURES = {
+  "Red Rascal": {
+    features: [
+          {
+                "title": "RASCAL RESPIN MODE",
+                "description": "When 3 or more Rascal symbols land, they stick and trigger a Respin. The grid alternates between Coin Mode (awarding instant cash prizes) and Wild Mode (adding Wild multipliers) via the Pendulum. Respins continue until no new Rascal symbols land. If Rascal symbols form a 2x2, 3x3, 4x4, or 5x5 Colossal Rascal, additional bonuses are awarded. A 5x5 Colossal Rascal immediately awards the Max Win."
+          },
+          {
+                "title": "PENDULUM",
+                "description": "The Pendulum sits outside the grid and determines the active mode during Rascal Respins, switching between Coin Mode and Wild Mode on each spin. Coin Mode awards instant cash prizes; Wild Mode adds Wild symbols with multipliers to the grid."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "READY TO RIOT",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 8 free spins with an increased chance of landing Rascal symbols!"
+          },
+          {
+                "title": "AFTER DARK",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins where Rascal symbols that fail to trigger respins are stored in a Popcorn Bucket beside the reels. On the final free spin, up to 25 stored Rascal symbols are added back to the grid, triggering a major Rascal Respin setup."
+          },
+          {
+                "title": "IGNITE THE NIGHT",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins and at least 4 Rascal symbols are guaranteed on every spin. The Pendulum activates and awards its mode on every free spin without triggering normal Rascal Respins."
+          }
+    ],
+  },
+  "Rise of Fortuna": {
+    features: [
+          {
+                "title": "FORTUNA WHEELS",
+                "description": "Regular, Super and Epic Fortuna Wheels are triggered when a Fortuna symbol lands on the grid. When the Wheel activates, the arrow will land on 1 of the 12 slices containing additive and multiplicative Multipliers and Jackpot prizes. All values revealed on Wheels will be collected as cash prizes by the Cash Prize Bar!"
+          },
+          {
+                "title": "CASH PRIZE BAR",
+                "description": "The Cash Prize Bar is located outside of the grid. When there is a Fortuna Wheel on the grid, the value revealed from the Wheel will be collected as a cash prize by the Cash Prize Bar. When the Cash Prize Bar has collected the values from each Wheel, the final cash prize is rewarded as a multiple of your bet!"
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "LUCKY CHARM",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game.10 free spins with a higher chance of triggering Fortuna Wheels!!"
+          },
+          {
+                "title": "SHE WHO SPINS",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game.10 free spins where all Fortuna Wheels will be Super or Epic!"
+          },
+          {
+                "title": "FORTUNE IS BLIND",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round!This Hidden Epic Bonus gives you 10 free spins and every spin guarantees that 3 Fortuna Wheels are triggered!"
+          }
+    ],
+  },
+  "Sand and Ashes": {
+    features: [
+          {
+                "title": "WILD SCARAB MULTIPLIERS",
+                "description": "When landing, Wild Scarab Multipliers trigger a respin and have a Multiplier value of up to 200x. The respins continue until no new Wild Scarab Multipliers land. The Multiplier value is applied to all paylines that the Wild Scarab Multiplier is part of during the respin sequence!"
+          },
+          {
+                "title": "FIRESTORMS AND SANDSTORMS",
+                "description": "During respins, there is a chance that a Firestorm or Sandstorm is activated before any new symbols land. Each time a Sandstorm is activated, it nudges all symbols one reel to the left. When a Firestorm is activated, it increases the Multiplier values of all Wild Scarab Multipliers on the grid!"
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "DESERT FURY",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 8 free spins with a higher chance of landing Wild Scarab Multipliers. Landing additional FS symbols at the same time in the bonus awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "STORMING SPHINX",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins where all Wild Scarab Multipliers become persistent and sticky, remaining on the grid for the entire bonus. Wilds do not trigger respins but Firestorms and Sandstorms can still activate every spin. Landing additional FS symbols awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          }
+    ],
+  },
+  "Munchy Milo": {
+    features: [
+          {
+                "title": "JOLT FRAMES",
+                "description": "At the start of a spin, a Jolt Frame can land on a low-paying, high-paying or Wild symbol. After all wins have been handled, the Jolt Frame activates and spreads out in straight lines, turning all affected symbols into the same symbol type as the one it landed on."
+          },
+          {
+                "title": "CHAIN REACTION",
+                "description": "If a Jolt Frame spreads over a symbol of the same type as the one it landed on, a Chain Reaction activates, causing the Jolt Frame to continue spreading further in the same directions. Wild symbols with multipliers can also be created during this process."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "LIFT OFF LUCK",
+                "description": "This bonus game keeps the base game's mechanics, increasing the chances of landing Jolt Frames!"
+          },
+          {
+                "title": "GRAVITY GROOVE",
+                "description": "This bonus game keeps the mechanics of the LIFT OFF LUCK bonus. In addition, Wild symbols with multipliers will become Sticky and remain until the end of the bonus!"
+          },
+          {
+                "title": "GOING BANANAS",
+                "description": "This bonus game keeps the mechanics of the GRAVITY GROOVE bonus, with 1 Jolt Frame guaranteed on every spin!"
+          }
+    ],
+  },
+  "3 Cursed Chests: Hold & Win": {
+    features: [
+          {
+                "title": "THREE CURSED CHESTS",
+                "description": "Three Chests sit above the grid — Green, Red, and Blue. Each activates a different feature when triggered. The Green Chest awards Cursed Wilds Respins filled with Wild and Wild Multiplier symbols (2x-100x). The Red Chest triggers a Hold & Win-style Cursed Coins Bonus with sticky coin symbols. The Blue Chest awards Free Spins (Treasure Cove bonus) when 6+ FS symbols land simultaneously."
+          },
+          {
+                "title": "CURSED FS",
+                "description": "Cursed FS symbols can combine with FS Upgrade symbols to trigger the Ghostly Gallows bonus game instead of the standard Treasure Cove free spins."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - GHOSTLY GALLOWS",
+                "description": "Trigger the Cursed FS and land FS and a FS Upgrade symbol in base game or TREASURE COVE bonus for 7-15 free spins, where landing a Pot symbol guarantees activation of the matching Chest!"
+          }
+    ],
+  },
+  "Le Bunny": {
+    features: [
+          {
+                "title": "SUPER CASCADES",
+                "description": "When a winning cluster forms, all winning symbols and all matching symbols anywhere on the grid are removed. New symbols drop in, potentially creating new wins. The sequence continues until no new wins occur."
+          },
+          {
+                "title": "GOLDEN SQUARES",
+                "description": "Every position where a winning symbol was removed becomes a Golden Square. When a Rainbow symbol lands, it activates all Golden Squares after cascades end, revealing Coins (cash prizes), Clover symbols (boost nearby or all Coin values), or Jackpot Eggs."
+          },
+          {
+                "title": "JACKPOT EGGS",
+                "description": "Jackpot Eggs can appear randomly or be revealed in Golden Squares, awarding one of four jackpot prizes: Mini (10x), Major (100x), Mega (1,000x), or Max Win (20,000x). Activated by Rainbow symbols."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "SPELL OF LUCK",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins where Golden Squares remain highlighted (progressive) until activated by a Rainbow symbol. Minimum revealed Coin value is 1x bet. Landing additional FS symbols awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "SWIPING THE SWEETS",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins where Golden Squares remain persistent throughout the entire bonus, even after being activated. The same squares can be activated multiple times. Landing additional FS symbols awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - RAINBOW RICHES",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins with the mechanics of Swiping the Sweets. In addition, a Rainbow symbol is guaranteed on every spin and only Silver or Gold Coins can be revealed (no Bronze Coins)."
+          }
+    ],
+  },
+  "Power of Ten": {
+    features: [],
+    bonus_games: [
+          {
+                "title": "WHOPPING WHEELS",
+                "description": "Activate this bonus with 3 refilling lives by landing 4 FS scatter symbols at the same time during the base game. At the start of this bonus, you will get 3 refilling lives that represent 3 free spins. When a Power Wheel lands on the grid, the lives will be refilled and new free spins are awarded. When a Power Wheel lands on the grid, it becomes Sticky and remains inactive on that position until the end of the bonus. After the final life has been used, all Power Wheels that are currently on the grid will activate and award their combined Cash Prizes. Regular wins will be awarded after every free spin. If there is a full grid of Power Wheels, the bonus will end immediately by the Wheels activating and awarding their combined Cash Prizes."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - ON THE HOUSE",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This bonus keeps the mechanics of the DECK OF FORTUNE bonus, with at least one Power Wheel guaranteed on every reel on every spin! Landing additional FS symbols at the same time in the bonus awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins"
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+  },
+  "Dynasty of Death": {
+    features: [
+          {
+                "title": "CASH PRIZES",
+                "description": "A Cash Prize can be connected to the two duelists on the DuelReel. The Cash Prize will be awarded if the duelist it is connected to wins. When all regular wins have been handled, the Cash Prize will be awarded as a multiple of your bet. Cash Prizes range from 2x to Max Win!"
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "KING'S DEFENCE",
+                "description": "Land 3 FS symbols to trigger this bonus game. 10 free spins with an increased chance of DuelReels!"
+          },
+          {
+                "title": "QUEEN'S DOMINION",
+                "description": "Land 4 FS symbols to trigger this bonus game. 10 free spins with at least 1 dueling Cash Prize on every DuelReel!"
+          },
+          {
+                "title": "IMMORTAL MATE",
+                "description": "Land 5 FS symbols to trigger the ultimate bonus round! In this Hidden Epic Bonus, 2 VS symbols are guaranteed on every spin and DuelReels will have two dueling Cash Prizes!"
+          }
+    ],
+  },
+  "Marlin Masters Atlantis": {
+    features: [
+          {
+                "title": "MARLIN & JACKPOT MARLIN SYMBOLS",
+                "description": "Marlin symbols display cash values that represents the payout rewarded if the symbol is part of a LootLine or is collected by a Fisherman. If Jackpot Marlins are part of a LootLine or are collected by a Fisherman, one of the four jackpot prizes will be revealed on the sign outside of the grid, with the possibility of reeling in the max win!"
+          },
+          {
+                "title": "FISHERMAN SYMBOLS",
+                "description": "When a Fisherman symbol lands, it will collect all Marlin and Jackpot Marlin symbols on the grid. The Fisherman itself can also land with a Multiplier value of up to x20. The Multiplier value will be applied on the cash value of the collected Marlin symbols, leading to staggering final rewards!"
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "SUNKEN EMPIRE",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with a progressive Trident Bar and upgrade levels!"
+          },
+          {
+                "title": "POSE FOR POSEIDON",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 15 free spins with a higher chance of reaching upgrade levels!"
+          }
+    ],
+  },
+  "Magic Piggy OG": {
+    features: [
+          {
+                "title": "MAGIC PIGGY AND MAGIC HAT",
+                "description": "When a Magic Hat symbol lands, all Magic Piggy symbols on the grid activate simultaneously. Each Magic Piggy reveals either a Wild symbol, a Bill Stack cash prize (1x-500x bet), or a Multiplier Coin (x2-x5 that applies to selected cash values)."
+          },
+          {
+                "title": "PIGGY POINTS",
+                "description": "In the bonus games, stars and super stars land above the reels and fill a Piggy Points meter for each reel. When a Magic Hat lands during the bonus, Magic Piggy symbols are placed on reels based on accumulated Piggy Points before activating."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "PIG BONUS",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with the Piggy Points system active above the reels. Stars and Super Stars accumulate points; when a Magic Hat lands, Piggy Points are converted to Magic Piggy symbols. Piggy Points reset after each Magic Hat activation."
+          },
+          {
+                "title": "EPIG BONUS",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins with progressive Piggy Points that do not reset after each Magic Hat activation, allowing the meter to grow throughout the bonus for more powerful Magic Piggy placements."
+          }
+    ],
+  },
+  "Pray for Six": {
+    features: [
+          {
+                "title": "TOTAL WIN BAR",
+                "description": "All wins during each spin are collected in the Total Win Bar located outside the grid. The collected win is awarded when all cascades have ended."
+          },
+          {
+                "title": "WAILING WHEELS",
+                "description": "When a '6' symbol lands and there is at least one win on the grid, it activates a Wailing Wheel. The Wheel spins and lands on a Cash Prize (Bronze 1x-4x, Silver 5x-20x, Gold 25x-666x), an Additive Multiplier (2x-333x), a Multiplicative Multiplier (x2-x33), or a MAX WIN. Multipliers are collected on the Total Win Bar and applied to the final win."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - CRADLE OF CHAOS",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus keeps the mechanics of the UNHOLY OFFSPRING bonus. In addition, the Total Win Bar is progressive, collecting wins and Multipliers until the end of the bonus. Landing additional FS symbols at the same time in the bonus awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - PLAYTIME IN PURGATORY",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This bonus keeps the mechanics of the UNHOLY OFFSPRING bonus. In addition, at least two '6' symbols are guaranteed on every spin. Landing additional FS symbols at the same time in the bonus awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Only one '6' symbol can land on a reel at a time."
+          }
+    ],
+  },
+  "Dark Spiral": {
+    features: [
+          {
+                "title": "SUMMONING SYMBOLS",
+                "description": "Summoning symbols land in three different sizes and reveal different stacks of the same paying or Wild symbol. When Summoning symbols are part of a win, they stay on the grid as other winning symbols cascade out, and new symbols are revealed for new possible wins. If a Wild symbol lands directly above or below a Summoning symbol on the same reel, the Summoning symbol increases in size by expanding to cover that Wild symbol."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - SHATTERED",
+                "description": "Land 3 FS scatter symbols to trigger. This bonus keeps the base game's mechanics, with an increased chance of landing Summoning symbols!"
+          },
+          {
+                "title": "BONUS GAME - TWISTED",
+                "description": "Land 4 FS scatter symbols to trigger. This bonus keeps the mechanics of the SHATTERED bonus. All Summoning symbols are Sticky and reveal new stacks with new symbols on every spin!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - TORTURED",
+                "description": "Land 5 FS scatter symbols to trigger. The Hidden Epic Bonus is an exclusive bonus game that can't be purchased. Players must trigger it purely by chance in the base game, which adds to its allure. It keeps the same mechanics as the TWISTED bonus but consistently delivers powerful payouts for a bigger chance at an Epic Win!"
+          }
+    ],
+  },
+  "Epic Bullets and Bounty": {
+    features: [
+          {
+                "title": "OUTLAW DUELREELS™",
+                "description": "A VS symbol expands if part of a win. Expanded DuelReels™ cover an entire reel, turning it into a Wild DuelReel. They start a Duel between 2 duelists. The winning duelist's Multiplier ranging from 2x up to 100x applies to all wins on that reel. If more than one DuelReel is part of the same win, multipliers are added together."
+          },
+          {
+                "title": "BOUNTY DUELREELS™",
+                "description": "When a Bounty VS symbol expands, the Duel is between a Bounty Hunter and an Outlaw. If the Bounty Hunter wins, she collects the Outlaw's multiplier and duels again, up to 3 times. The combined Multiplier is applied to that entire reel. The latest Bounty Hunter Multiplier to win becomes the starting multiplier for the next Bounty Hunter duel in the progressive bonus."
+          },
+          {
+                "title": "EPIC VERSION",
+                "description": "This is the Epic version of Bullets and Bounty with higher volatility, a Gamble Upgrade to the Epic Bonus, higher chance of triggering a Bonus in BONUSHUNT FEATURESPINS, and a buyable Epic Bonus."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "TRUE GRIT",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. Choose between a Gamble or 10 free spins with Progressive Bounty Hunter Multipliers!"
+          },
+          {
+                "title": "FOUR SHOTS TO FREEDOM",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. Choose between a Gamble or 10 free spins with a Bullets & Bounty Bar that awards DuelSpins and VS symbols!"
+          },
+          {
+                "title": "MAKE HER DAY",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Epic Bonus gives you 10 free spins and starting the first spin at DuelSpin Level 1. It also has Progressive Bounty Hunter Multipliers!"
+          }
+    ],
+  },
+  "Zeus Ze Zecond": {
+    features: [
+          {
+                "title": "WONDER REVEAL",
+                "description": "Wonder symbols land vertically on reels 2, 3, 4, and 5, revealing high-paying symbols, Wilds, or Wonder Reels. Wins with revealed symbols trigger sticky respins, continuing until no new wins or a Wonder Reel appears. Wonder Reels can reveal Coins, Diamonds, Clovers, and Pots of Olympus — Coins and Diamonds award cash prizes, Clovers multiply values, and Pots of Olympus collect everything into one total."
+          },
+          {
+                "title": "WONDER METER",
+                "description": "In the GODLY ASCENSION bonus, a Wonder Meter is added outside the grid that fills with Wonder symbols to trigger reward spins with a full grid of Wonder symbols. The minimum Coin type increases with each reward spin, starting at Bronze and progressing to higher values."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "GATES OF HADES",
+                "description": "This bonus game keeps the base game's mechanics, and all Wonder symbols are Sticky and remain in the same position throughout the bonus!"
+          },
+          {
+                "title": "GODLY ASCENSION",
+                "description": "This bonus game keeps the base game's mechanics, adding a Wonder Meter outside the grid that fills with Wonder symbols to trigger award spins with a full grid of Wonder symbols! The minimum Coin type increases with each reward spin, starting at Bronze and progressing to higher values."
+          },
+          {
+                "title": "ZEUS UNLEASHED",
+                "description": "This bonus keeps the mechanics of the GATES OF HADES bonus. In addition, reels 2, 3, 4, and 5 are filled with Wonder symbols from the start! Low-paying symbols cannot land in this bonus."
+          }
+    ],
+  },
+  "Eternal Duel": {
+    features: [
+          {
+                "title": "DUELREELS™",
+                "description": "When a VS symbol lands, it expands into a DuelReel if part of a winning combination once expanded. DuelReels™ cover the entire reel and trigger a Duel between Zeus and Hades. Each DuelReel has one Multiplier assigned to each duelist. The winning duelist's Multiplier is applied across that entire DuelReel."
+          },
+          {
+                "title": "FS DUELREELS™",
+                "description": "When 3 or more FS symbols land on the grid, they expand into FS DuelReels. Each FS DuelReel has two free spin values that duel against each other. The winning free spin value of each FS DuelReel is added together to determine the bonus free spins. Bonus Upgrades can also be triggered: 3 FS DuelReels + 1 Upgrade = ZEUS FURY; 3 FS DuelReels + 2 Upgrades = ETERNAL DESTRUCTION; 4 FS DuelReels + 1 Upgrade = ETERNAL DESTRUCTION."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - HADES HAVOC",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. At least 6 free spins with a top and bottom progressive Reel Multiplier!"
+          },
+          {
+                "title": "BONUS GAME - ZEUS FURY",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. At least 8 free spins where Wild symbols get Multipliers from the Reel Multipliers!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - ETERNAL DESTRUCTION",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you at least 10 free spins and at least 1 Wild, 1 Relic or Cyclops symbol and 1 DuelReel are guaranteed on every spin!"
+          }
+    ],
+  },
+  "Le Digger": {
+    features: [
+          {
+                "title": "LAYERS AND DYNAMITE",
+                "description": "There are three Layers, the two first reveal paying, FS and Wild Dynamite symbols. Layer 3 has only Golden Reveals. On wins, all regular paying symbols of the type that were part of the winning combination are removed from the grid, including one Layer of the grid behind those symbols. After new Layers and new symbols are revealed, there is a chance that Smokey throws Dynamite onto the grid. Dynamite will remove affected symbols and one Layer. If Dynamite affects a Wild Dynamite, all symbols in a 3x3 square around that Wild Dynamite is removed."
+          },
+          {
+                "title": "GOLDEN REVEALS",
+                "description": "When Layer 3 is reached those positions will reveal Coins, Green Clover, Gold Clover and Collector symbols. Coins award instant cash prizes. Clovers boost the value of nearby Coins or all Coins on the grid. Collectors collect Coins and activated Collectors."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS - TOMB SERVICE",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. Choose between a Gamble or 10 free spins with a Dynamite Collector that activates at the end of the bonus!"
+          },
+          {
+                "title": "BONUS - DIG IT",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. Choose between a Gamble or 10 free spins with a Blast Bar that, when full, upgrades the minimum Coin type on reveals!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - GOLD DIGGER",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins and Smokey will throw 5 Dynamites onto the grid every spin!"
+          }
+    ],
+  },
+  "Dusk Princess": {
+    features: [
+          {
+                "title": "SUPER CASCADES",
+                "description": "When a winning combination occurs, all regular paying symbols of the winning type are removed from the grid and new symbols drop down to fill the empty spaces."
+          },
+          {
+                "title": "BLESSING BAR",
+                "description": "A Blessing Bar is located outside the grid and awards Wild symbols with Multipliers when full. When a winning combination lands, the Blessing Bar starts to fill — an 8-symbol win fills it the first time, then the required amount increases by +2 each time. When full, it awards 3 Wild symbols with a Multiplier value each. On each subsequent activation in the same spin, the number of Wilds may increase by +1 or the Multiplier value may increase, up to 500x."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "THE LUNAR COURT",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus keeps mechanics of THE DUSK COURT bonus. In addition, the awarded Wild symbols will start at 4 and the Multiplier value will start at 5x. A 15-symbol win is needed to fill the Blessing Bar the first time. Then the amount of winning symbols needed will increase by +3 symbols each time you fill the Bar."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - THE NIGHT COURT",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This bonus keeps the base game's mechanics. In addition, the Blessing Bar will stay full throughout the bonus and activate once on every free spin after regular wins have been handled. The awarded Wild symbol will start at 6 and the Multiplier will start at 10x. The awarded Wild or Multiplier value will increase after the Blessing Bar activates on every spin. SPECIAL SYMBOLS: FS symbols cannot land in THE DUSK COURT, THE LUNAR COURT and THE NIGHT COURT bonus."
+          }
+    ],
+  },
+  "Circle of Life": {
+    features: [
+          {
+                "title": "TREE OF LIFE",
+                "description": "When a Tree symbol lands, it acts as a Wild revealing a Multiplier value (2x-100x). If part of a win, it triggers a Respin and expands upward by one row into a Tree of Life. Respins continue as long as new wins occur. Multiple Tree symbols in the same win have their values added together."
+          },
+          {
+                "title": "CIRCLE OF LIFE",
+                "description": "When a Tree of Life fully expands from the bottom to the top row of a reel, the Circle of Life wheel is triggered. It spins and lands on Additive Multipliers (2x-100x), a Multiplicative value (x2), or a Skull which ends it. The wheel keeps spinning and adding to the Tree's multiplier until the Skull is hit."
+          },
+          {
+                "title": "SPREADING FS SYMBOLS",
+                "description": "When 3 or more FS scatter symbols land simultaneously, each FS symbol expands across its entire reel. Every covered position represents +1, +2, or +3 free spins, and the total determines the bonus spins awarded."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - ETERNAL",
+                "description": "Activate this bonus with free spins by landing 4 expanding FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the ORIGIN bonus. In addition, a reel is activated when a Circle of Life is triggered on that reel. The activated reel will stay active throughout the bonus and guarantees that a Tree symbol lands on that reel every spin. Landing additional expanding FS symbols in the bonus awards extra free spins: Each expanding FS symbol awards at least +4 free spins and max +12 free spins."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - REBIRTH",
+                "description": "Activate this bonus with free spins by landing 5 expanding FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the ETERNAL bonus. In addition, reels 2 and 4 are activated from the start. Expanding FS symbols cannot land in this bonus."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Tree symbol and an FS symbol cannot land on the same reel at the same time. Only 3 expanding FS symbols can land per spin in the ORIGIN and the ETERNAL bonus."
+          }
+    ],
+  },
+  "Toshi Ways Club": {
+    features: [
+          {
+                "title": "FLASH FRAMES",
+                "description": "Flash Frames can land on the grid at the start of a spin. They determine the size of paying symbols by acting as dividers — symbols are cut to fill the spaces between Flash Frames, creating different-sized symbols that each count as one symbol toward wins."
+          },
+          {
+                "title": "SWAP SYMBOLS",
+                "description": "When a Swap symbol lands, it replaces all Flash Frames (and itself) with 1 paying symbol, cutting all Flash Frames into the smallest possible symbol size, creating additional winning symbols. Only 1 Swap or Slicing Swap symbol can land on the grid at a time."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "SUCKR PUNCH",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the RETRO REBOOT bonus. In addition, a Slicing Swap scatter symbol can land. Slicing Swap symbols activate when there are Flash Frames on the grid. When activated, the Slicing Swap symbol will replace all Flash Frames, including itself, with 1 paying symbol. It will also cut all the Flash Frames and itself into the smallest possible symbol size, creating additional winning symbols. Only 1 Swap or Slicing Swap symbol can land on the grid at the same time. Landing additional FS symbols at the same time in the bonus awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "TOKYO DATA DRIFT",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the SUCKR PUNCH bonus. In addition, 1 Swap or Slicing Swap symbol is guaranteed on every free spin. FS symbols cannot land in this bonus."
+          },
+          {
+                "title": "RETRO REBOOT",
+                "description": "Base game bonus with Flash Frames mechanic."
+          }
+    ],
+  },
+  "Deal With Death": {
+    features: [
+          {
+                "title": "JOKER SYMBOL",
+                "description": "The Joker symbol is a Wild that substitutes for all paying symbols. It also activates a special mechanic when it lands — it can turn adjacent low-paying symbols into higher-paying symbols or award a cash prize based on a poker hand evaluation of the symbols on the grid."
+          },
+          {
+                "title": "POKER HAND PAYTABLE",
+                "description": "During the Dealbreaker bonus, a progressive Poker Hand paytable is active. Landing matching high-paying symbols that form poker hand combinations awards escalating multipliers based on the strength of the hand formed."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - DEAL WITH IT",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with an increased chance of landing a JOKER symbol!"
+          },
+          {
+                "title": "BONUS GAME - DEALBREAKER",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins with a progressive Poker Hand paytable!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - FOOL'S GOLD",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins and every spin guarantees 1 Joker!"
+          }
+    ],
+  },
+  "Le Santa": {
+    features: [
+          {
+                "title": "GOLDEN SQUARES",
+                "description": "When a winning combination hits, the squares behind the winning symbols become Golden Squares. If a Rainbow symbol is present, it activates those Golden Squares after wins are collected. They can reveal Coins, Clover symbols, Santa Sacks, or Jackpot Boxes. Coins award instant cash prizes. Clovers boost the value of nearby Coins or all Coins on the grid. Santa Sacks collect and store the total value of all visible Coins and other Santa Sacks."
+          },
+          {
+                "title": "JACKPOT BOXES",
+                "description": "Jackpot Boxes can pop up during a spin or be revealed in Golden Squares, each bringing 1 of 4 exciting jackpot prizes based on your bet. If a Jackpot Box lands with a Rainbow, it activates! Each Box has its own jackpot, if you land more than 1 they all combine for a bigger win!"
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - SLEIGHING IT",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins where Golden Squares remain highlighted even after being activated!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - WRECK THE HALLS",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins and every spin guarantees 1 Rainbow!"
+          }
+    ],
+  },
+  "Army of Ares": {
+    features: [
+          {
+                "title": "DISC MULTIPLIERS AND BATTLE HORSE",
+                "description": "Disc Multiplier symbols are wild multipliers that can land on the grid. Battle Horse symbols are special multiplier symbols. When these land during the FEAR AND FLAME bonus or WRATH AND RUIN bonus, they refill lives to 3 and increase the Reel Multipliers above each reel. Only dead symbols, Disc Multipliers, and Battle Horses can land in the bonus games."
+          },
+          {
+                "title": "REEL MULTIPLIERS",
+                "description": "In the bonus games, a Reel Multiplier is displayed above each reel, starting at 1x. Each time a Disc Multiplier or Battle Horse symbol lands, all Reel Multipliers increase. At the end of the bonus, all Reel Multipliers are combined and applied to the final win."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - WRATH AND RUIN",
+                "description": "Activate this bonus with 3 refilling lives by landing 4 FS scatter symbols at the same time during the base game. In this bonus game, lives are displayed on a Life Meter outside the grid, where 3 lives equal 3 free spins. When any Disc Multiplier or Battle Horse symbol lands, the lives and free spins are refilled to 3; once all lives are consumed, the bonus ends. During this bonus, a Reel Multiplier above each reel starts at 1x. Only dead symbols, Disc Multipliers, and Battle Horses can land."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - ARES ASCENDS",
+                "description": "Activate this bonus with 3 refilling lives by landing 5 FS scatter symbols at the same time during the base game. This bonus keeps the mechanics of the WRATH AND RUIN bonus. In addition, this bonus guarantees a full grid with Disc Multipliers and 1 Battle Horse symbol from the start! FS symbols cannot land in FEAR AND FLAME, WRATH AND RUIN, and the ARES ASCENDS bonus."
+          }
+    ],
+  },
+  "Superstar Sevens": {
+    features: [
+          {
+                "title": "CASCADE COUNTER",
+                "description": "When the Cascade Counter is activated, all the removed non-winning symbols are converted into a Multiplier value. In addition, each symbol that is removed adds on to an Additive Multiplier. When all wins and Super Cascades have been handled the final win will be multiplied with the Multiplier value, boosting your chances of a thrilling win!"
+          },
+          {
+                "title": "LIGHTNING SYMBOLS",
+                "description": "To activate the Cascade Counter you need to land a Lightning symbol and a win on the same spin. If you're able to land an Epic Lightning symbol and there's a win in the Total Win Bar an additional Multiplier will be activated, boosting your winnings to new heights!"
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "REEL CHARGE",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. This bonus gives you 10 free spins with increased chances of landing Lightning symbols!"
+          },
+          {
+                "title": "LUCKY STRIKE",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. This bonus gives you 10 free spins with a Lightning symbol landing on EVERY spin!"
+          },
+          {
+                "title": "JUICY JOLTZ",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! The Hidden Epic Bonus gives you 10 free spins with guaranteed Lightning symbol and a progressive Total Win Bar!"
+          }
+    ],
+  },
+  "Steamrunners": {
+    features: [
+          {
+                "title": "GREEN GAS CANISTERS",
+                "description": "A Green Gas Canister transforms itself and adjacent low-paying or Wild symbols into Wilds, spreading horizontally and vertically if part of a win, and continues spreading if symbols are connected!"
+          },
+          {
+                "title": "PURPLE GAS CANISTERS",
+                "description": "When a Purple Gas Canister lands, it transforms itself and all low-paying and Wild symbols into Wilds if part of a win. Transformed Wilds may gain random Multiplier of up to 200x! Wild symbols affected by Gas Canisters will always get a 2x Multiplier value!"
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "SKY CITY",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 8 free spins with Sticky Wild Multipliers!"
+          },
+          {
+                "title": "GASLIGHT DISTRICT",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins with Sticky Wild Multipliers and a guaranteed Wild on every spin!"
+          },
+          {
+                "title": "COURT OF THE HIGH STEAM",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins and 1 Gas Canister on every spin!"
+          }
+    ],
+  },
+  "Hot Ross": {
+    features: [
+          {
+                "title": "RO$ AND HOT RO$ SYMBOLS",
+                "description": "Ro$ symbols expand upward into a Wild Reel if part of a winning combination, acting as Wilds with a random multiplier of up to 200x. Hot Ro$ symbols move to the top of the reel and expand downward, also triggering adjacent Ro$ symbols to expand. All expanded symbols act as Wilds and can trigger multipliers."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "CAT CALLS",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with an increased chance of landing Ro$ symbols. Landing additional FS symbols at the same time in the bonus awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "NINE LIVES",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins where reels become activated when a Ro$ or Hot Ro$ symbol lands on them. Activated reels guarantee that one Ro$ or Hot Ro$ symbol lands on that reel on every subsequent spin. Activated reels remain active throughout the bonus. Landing additional FS symbols awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - BIGG BOSS ROSS",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins and at least 2 Hot Ro$ symbols and 1 Wild symbol are guaranteed on every spin."
+          }
+    ],
+  },
+  "Sun Princess": {
+    features: [
+          {
+                "title": "SUN RAY FRAMES",
+                "description": "Sun Ray Frames can land on the grid and spread horizontally or vertically, turning all symbols they cross into the same high-paying symbol type. When a Sun Ray Frame spreads through a Wild symbol, that Wild receives a 2x Multiplier and becomes Sticky, remaining on the grid with that Multiplier until the end of any bonus. The Multiplier increases by 2x every time the Wild is hit by another Sun Ray Frame."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - SUNFIRE PALACE",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the SOLARIS GROVE bonus, in addition when a Sun Ray Frame spreads through a Wild symbol, that Wild symbol receives a 2x Multiplier and becomes Sticky and remains on the grid with a Multiplier until the end of the bonus! The Multiplier will increase by 2x every time that Wild symbol is hit by a Sun Ray Frame. Landing additional FS symbols at the same time in the bonus awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - GOLDEN ECLIPSE",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the SUNFIRE PALACE bonus, with at least 1 Sun Ray Frame guaranteed on every spin! Landing additional FS symbols at the same time in the bonus awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable. Sun Ray Frames cannot land on FS symbols."
+          }
+    ],
+  },
+  "The Count": {
+    features: [
+          {
+                "title": "EXPANDED BLOODY WILDS",
+                "description": "When a Blood symbol lands, it expands downward into a Bloody Wild if it forms a winning combination once expanded. Expanded Bloody Wilds act as Wilds or reveal a multiplier value of up to 500x, giving your win a bloody boost!"
+          },
+          {
+                "title": "WILD BAT SYMBOLS",
+                "description": "When a Wild Bat symbol lands, it acts as a Wild or reveals a multiplier value of up to 500x. When an Epic Wild Bat symbol lands, it has a multiplier of up to 500x and spreads its value to all expanded Bloody Wilds and other Wild Bat symbols on the grid."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - BAT TO THE BONE",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with a bigger chance of landing Wild Bat symbols!"
+          },
+          {
+                "title": "BONUS GAME - REST IN PIECES",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins with a Symbol Counter that turns low-paying symbols into Wild Bat symbols when full!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - COUNT ON BLOOD",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins an increased chance of landing Epic Wild Bat symbols! Guaranteed at least 5 Wild Bat symbols on each spin!"
+          }
+    ],
+  },
+  "Donny and Danny": {
+    features: [
+          {
+                "title": "LOOTLINES AND CASH BOARD",
+                "description": "A LootLine is formed when a winning payline contains 3 or more Donny symbols, or a combination of Donny and Danny symbols. Each Donny symbol in the LootLine selects a random value from the Cash Board (18 prize values ranging from 1x to 12,500x bet). The combined selected values form the LootLine payout."
+          },
+          {
+                "title": "DOLLAR-REELS",
+                "description": "When a Danny symbol lands as part of a LootLine win, it expands upward into a Wild Dollar-Reel. Each position covered can reveal a multiplier (up to x10) and contribute to LootLines in the same spin."
+          },
+          {
+                "title": "BOOSTER SYMBOLS",
+                "description": "In the Make it Reign and Cash Kings Forever bonuses, Booster symbols land and remove the current lowest value from the Cash Board, progressively upgrading the minimum available prize throughout the feature."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "ROLLIN' IN DOUGH",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with an increased chance of landing Donny symbols for more Cash Board value selections."
+          },
+          {
+                "title": "MAKE IT REIGN",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins with all mechanics from Rollin' in Dough, plus Booster symbols that remove the lowest value from the Cash Board when they land."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - CASH KINGS FOREVER",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins with the mechanics of Make it Reign. On the final spin, a full grid of Donny symbols is guaranteed, creating the maximum possible LootLine setup."
+          }
+    ],
+  },
+  "Spear of Athena": {
+    features: [
+          {
+                "title": "FLAMING FRAMES AND FORTUNE SYMBOLS",
+                "description": "Flaming Frames can land on the grid and activate when a Fortune symbol also lands. When activated, the Flaming Frame highlights its grid position as a Golden Square. Fortune symbols can additionally reveal Shield symbols that boost the values of highlighted positions."
+          },
+          {
+                "title": "GOLDEN SQUARES",
+                "description": "Activated Golden Squares reveal Coins, Clover symbols, or Shield symbols when a Fortune symbol activates them. Coins award cash prizes, Clovers multiply nearby or all Coin values, and Shields can boost revealed values."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - OMEN OF WAR",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins where Flaming Frames remain highlighted even after being activated!"
+          },
+          {
+                "title": "BONUS GAME - SIEGE OF TROY",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins, and when a Fortune symbol activates, at least 1 Shield symbol is revealed!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - ATHENA ASCENDS",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins and a Fortune symbol is guaranteed on each spin!"
+          }
+    ],
+  },
+  "Le Fisherman": {
+    features: [
+          {
+                "title": "GOLDEN SQUARES AND RAINBOW",
+                "description": "When a winning cluster forms, the positions of winning symbols become Golden Squares. When a Rainbow symbol lands, it activates all Golden Squares, revealing Bronze Coins (0.2x-4x), Silver Coins (5x-20x), Gold Coins (25x-500x), Clover symbols (multipliers for nearby or all Coins), or Baskets (collect all visible Coin values)."
+          },
+          {
+                "title": "BIG CATCH BAR",
+                "description": "A Big Catch Bar is located outside the grid that fills during bonus rounds. When full, it upgrades the power of Rainbow symbols, making them more effective at activating Golden Squares."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "ON THIN ICE",
+                "description": "Land 3 FS scatter symbols to trigger. 10 free spins where Golden Squares remain highlighted until activated and a Big Catch Bar that gives more powerful Rainbows!"
+          },
+          {
+                "title": "SLIPPERY WHEN WET",
+                "description": "Land 4 FS scatter symbols to trigger. 10 free spins with a Big Catch Bar and Golden Squares remain highlighted even after being activated!"
+          },
+          {
+                "title": "SMOKEY UNDER WATER",
+                "description": "Land 5 FS scatter symbols to trigger! This Hidden Epic Bonus gives you 10 free spins and the Big Catch Bar stays at the highest level!"
+          }
+    ],
+  },
+  "Le Cowboy": {
+    features: [
+          {
+                "title": "REVOLVER CYLINDER",
+                "description": "The Revolver Cylinder mechanic activates when a Cylinder symbol lands on the grid. It spins and lands on a Cash Prize, Multiplier, or a special outcome. Reload symbols can refill the cylinder for additional spins. The combined Cylinder values contribute to the total win."
+          },
+          {
+                "title": "BULLET COLLECTOR",
+                "description": "In the TRAIL OF TRICKERY and PISTOLS AT DAWN bonuses, a Bullet Collector is displayed outside the grid. Each win adds 1 bullet to the Collector. When activated (on the last free spin or progressively), the collected bullets apply their combined value as a multiplier to the final win."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "HIGH NOON SALOON",
+                "description": "Base game bonus with Revolver Cylinder mechanic. Bonus Gamble available."
+          },
+          {
+                "title": "BONUS GAME - TRAIL OF TRICKERY",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This brings you into a Bonus Gamble, where you have a choice to either play the TRAIL OF TRICKERY bonus game or to Gamble. This bonus keeps the mechanics of the HIGH NOON SALOON bonus. In addition, there will be a Bullet Collector displayed outside the grid. Each win will add 1 bullet to the Bullet Collector. On the last free spin, the Bullet Collector will activate after all Revolver Cylinders and Reload symbols have activated."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - PISTOLS AT DAWN",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This bonus keeps the mechanics of the TRAIL OF TRICKERY bonus. In addition, the Bullet Collector is progressive and will start at 5 and trigger on every free spin after all Revolver Cylinders and Reload symbols have activated. Silver Coins are the lowest Coin type that will land in this bonus! FS symbols cannot land in this bonus."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable. FS symbols cannot land at the same time as Revolver Cylinders."
+          }
+    ],
+  },
+  "Le Zeus": {
+    features: [
+          {
+                "title": "MYSTERY SYMBOLS AND WONDER REVEAL",
+                "description": "Mystery symbols can land on reels 2-5 and reveal high-paying symbols, Wilds, or Coins/Diamonds when activated. In the base game, they trigger respins with sticky symbols when part of a win. In the MYTH-TAKEN IDENTITY bonus, a Mystery Meter fills when Mystery symbols land, triggering reward spins with a full grid of Mystery symbols."
+          },
+          {
+                "title": "MYSTERY METER",
+                "description": "In the MYTH-TAKEN IDENTITY bonus, a Mystery Meter is added outside the grid. When Mystery symbols land, the meter fills. A full meter triggers reward spins with a full grid of Mystery symbols where the minimum Coin type increases with each reward spin."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "MYTH-TAKEN IDENTITY",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 8 free spins with a Mystery Meter that awards additional spins and full grid Mystery symbols!"
+          },
+          {
+                "title": "GODS JUST WANNA HAVE FUN",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! 8 free spins with Sticky Mystery symbols and 4 out of 6 reels have Mystery symbols from the start!"
+          },
+          {
+                "title": "MYSTERY METER",
+                "description": "In the MYTH-TAKEN IDENTITY bonus a Mystery Meter is added outside the grid that fills up when Mystery symbols land. Triggering reward spins with a full grid of Mystery symbols where the minimum Coin type increases with each reward spin!"
+          }
+    ],
+  },
+  "Stormborn": {
+    features: [
+          {
+                "title": "THUNDER RESPINS",
+                "description": "When 5 or more Coin symbols land, you trigger Thunder Respins! Only Coins, Collector Chests, and dead symbols appear during this and stay in place. Keep landing Coins or Collector Chests to keep the Respins going. When it ends, all Coins reveal cash prizes based on your bet, Bronze, Silver, and Gold for massive payouts up to 500x! Collector Chests scoop up all Coin values and if they come with a Multiplier, they boost your total before collecting."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - STORMBREAKER",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 3 free spins with Thunder Respins and at least 2 Coins and 1 Collector Chest!"
+          },
+          {
+                "title": "BONUS GAME - THE WILD STORM",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with Sticky Wilds and Wild God Reels with Multipliers!"
+          },
+          {
+                "title": "BONUS GAME - LEGACY OF LIGHTNING",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 3 free spins with Thunder Respins and at least 4 Coins, 1 Collector Chest and Mjolnir symbols!"
+          },
+          {
+                "title": "BONUS GAME - HAMMER OF THE HEAVENS",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins where Mjolnir symbols temporarily multiply Wilds!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - BLESSINGS OF THE BIFROST",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 5 free spins with Thunder Respins and at least 5 Coins, 1 Collector Chest and 1 Mjolnir symbol!"
+          }
+    ],
+  },
+  "Tiger Legends": {
+    features: [
+          {
+                "title": "EXPANDING LEGENDARY FRAME WARRIORS",
+                "description": "When a Legendary Frame lands on a high-paying Warrior symbol, it can expand into a Legendary Frame Warrior, if it's part of a win. Legendary Frame Warriors expand upward and boosts your chance of a win!"
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "CLAWS OF DESTINY",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with an even bigger chance of landing Legendary Frame Warriors!"
+          },
+          {
+                "title": "BATTLE OF THE BEASTS",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins and when a Legendary Frame Warrior expands, all matching symbols expand too!"
+          }
+    ],
+  },
+  "Bash Bros": {
+    features: [
+          {
+                "title": "BASH AND SMASH",
+                "description": "Oskar and Fred are the two characters in this slot. When Oskar's Bash activates, it bashes a row of symbols, turning them into Cash Stacks with added cash values. When Fred's Smash activates, it smashes a column of symbols, converting them into Wild symbols with multipliers. Cash Stacks accumulate values that are collected at the end of a spin."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - BROS BEFORE BLOWS",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with an increased chance of landing Cash Stacks!"
+          },
+          {
+                "title": "BONUS GAME - CASH ME OUTSIDE",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins with at least 1 guaranteed bash from Oskar or 1 smash from Fred!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - REACTOR RIOT",
+                "description": "Land 5 FS scatter symbols to trigger this bonus! 10 free spins, each free spin guarantees 1 bash from Oskar and 1 smash from Fred!"
+          }
+    ],
+  },
+  "Smoking Dragon": {
+    features: [
+          {
+                "title": "ROW CASCADES AND WILD SYMBOLS",
+                "description": "When a winning combination occurs, all symbols on the winning row are removed and new symbols drop in from above, potentially creating new wins on that row. Wild symbols and Epic Wild symbols can land with Multiplier values. Multiple Wilds in the same win have their multipliers added together before being applied."
+          },
+          {
+                "title": "MULTIPLIER BAR",
+                "description": "In the SMOLDERING RICHES and FIRE AND FORTUNE bonuses, a Multiplier Bar is located outside the grid indicating the minimum Multiplier value of all Wild and Epic Wild symbols. The bar starts at a minimum of 1x and increases by one level for every 10 Row Cascades accumulated. Possible levels: 1x, 2x, 5x, 10x, 15x, 25x."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - SMOLDERING RICHES",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the PUFF OF LUCK bonus. In addition, a Multiplier Bar is located outside the grid, which indicates the lowest possible Multiplier value of all Wild and Epic Wild symbols that land on the grid. The Multiplier Bar starts with a minimum value of 1x. Each time 10 Row Cascades have been accumulated, the Multiplier Bar will increase by one level (up to the max level). The possible values on each level of the Multiplier Bar are 1x, 2x, 5x, 10x, 15x, 25x."
+          },
+          {
+                "title": "EPIC BONUS - FIRE AND FORTUNE",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the SMOLDERING RICHES bonus. In addition, it features one guaranteed win and a Wild and/or epic Wild on every spin, with the progressive Multiplier Bar starting at 5x. FS symbols cannot land during this bonus."
+          },
+          {
+                "title": "PUFF OF LUCK",
+                "description": "Base game: Row Cascades mechanic with Wild symbols and Multipliers."
+          }
+    ],
+  },
+  "Chaos Crew 3": {
+    features: [
+          {
+                "title": "CRAZY MULTIPLIERS AND GLITCH DOG",
+                "description": "Crazy Multiplier symbols are wild multipliers that can land on the grid. When they land during a bonus, they increase the Reel Multiplier above that reel and refill lives to 3. Glitch Dog symbols are special wild symbols that also trigger the same reel multiplier increase. Only dead symbols, Crazy Multipliers, and Glitch Dogs can land in the bonus games."
+          },
+          {
+                "title": "REEL MULTIPLIERS AND CHAOS UPGRADE",
+                "description": "In the CHAOS bonus, a Reel Multiplier sits above each reel. Each time a Crazy Multiplier or Glitch Dog lands, all Reel Multipliers increase. Chaos Upgrade symbols can also land to boost all Reel Multipliers simultaneously. At the end of the bonus, all Reel Multipliers are added and applied to the bet for the final win."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "CHAOS",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. The classic Chaos Crew Bonus with 3 refilling lives and Glitch Dog symbols! Each time a Crazy Multiplier or Glitch Dog lands, the Reel Multiplier increases and the lives refill. The bonus ends when you run out of lives, then all Reel Multipliers are added up and applied to your bet for the final win!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - AN EPIC GLITCH!",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 3 refilling lives and guarantees a full grid with Crazy Multipliers, a Chaos Upgrade symbol and a Glitch Dog from the start!"
+          }
+    ],
+  },
+  "Le King": {
+    features: [
+          {
+                "title": "GOLDEN SQUARES AND RAINBOW",
+                "description": "When a winning cluster forms in the base game, the positions of winning symbols become Golden Squares. When a Neon Rainbow symbol lands, it activates all Golden Squares, revealing Bronze Coins (0.2x-4x), Silver Coins (5x-20x), Gold Coins (25x-500x), Clover symbols (multipliers for nearby or all Coins), or Pot of Gold symbols (collect all Coin values). Jackpot Boxes can also appear, awarding one of four jackpot prizes."
+          },
+          {
+                "title": "JACKPOT BOXES",
+                "description": "Jackpot Boxes can pop up during a spin or be revealed in Golden Squares. Each brings one of four jackpot prizes (Mini, Major, Mega, Max Win). Activated by Rainbow symbols."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS BUY",
+                "description": "Where permitted by market conditions, this game offers the following bonus buy options: BONUSHUNT FEATURESPINS - Each spin is 5 times more likely to trigger a bonus game! Cost 3x bet. SHAMROCK & ROLL FEATURESPINS - Guarantees at least 1 win and a Neon Rainbow symbol lands on each spin! Cost 60x bet. SPIN CITY - 10 free spins where Golden Squares remain highlighted until activated! Cost 80x bet. JACKPOT OF GOLD - 10 free spins where Golden Squares remain highlighted even after being activated! Cost 250x bet."
+          }
+    ],
+  },
+  "The Luxe": {
+    features: [
+          {
+                "title": "GOLDEN FRAMES AND MULTIPLIERS",
+                "description": "Golden Frames can land on the grid and reveal Multiplier values or Jackpots when activated. Clover Crystal symbols can also land to boost nearby or all Multiplier values. When activated, all revealed Multipliers are combined and applied to the total win."
+          },
+          {
+                "title": "BLACK AND GOLD MECHANIC",
+                "description": "In the base game, landing certain symbol combinations activates the Black and Gold mechanic where Multiplier symbols reveal their values and contribute to a combined global multiplier applied to the total win."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - GOLDEN HITS",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the BLACK AND GOLD bonus. In addition, 3 Golden Frames will be on the grid from the start and remain until the end of the bonus. All Multiplier values are Sticky and will remain throughout the bonus unless they are part of a win."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - VELVET NIGHTS",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This Hidden Epic Bonus keeps the mechanics of the GOLDEN HITS bonus. Each position will have a Golden Frame from the start with either a Multiplier or a Jackpot. Clover Crystals and FS symbols do not appear in this bonus."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+  },
+  "Jaws of Justice": {
+    features: [
+          {
+                "title": "LASER SHARKS",
+                "description": "Laser Shark symbols can land on the grid. When activated, they fire a Laser beam across the grid in a specific direction, turning all symbols hit into high-paying symbols or Wild symbols. Different Laser Sharks fire in different directions and can chain reactions when their beams cross."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "CHOMPOCALYPSE",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins with Laser Sharks firing in two different directions!"
+          },
+          {
+                "title": "NUCLEAR NEBULA",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins and at least 1 Laser Shark will land on every free spin!"
+          }
+    ],
+  },
+  "Bullets and Bounty": {
+    features: [
+          {
+                "title": "DUELREELS™",
+                "description": "A VS symbol expands if part of a win. Expanded DuelReels™ cover an entire reel, turning it into a Wild DuelReel. They start a Duel between 2 duelists. The winning duelist's Multiplier ranging from 2x up to 100x applies to all wins on that reel. If more than one DuelReel is part of the same win, multipliers are added together."
+          },
+          {
+                "title": "BOUNTY DUELREELS™",
+                "description": "When a Bounty VS symbol expands, the Duel is between the Bounty Hunter and an Outlaw. If the Bounty Hunter wins, she collects the Outlaw's multiplier and duels again, up to 3 times. The combined Multiplier is applied to that entire reel."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - TRUE GRIT",
+                "description": "Activate this bonus with 10 free spins by landing 3 FS scatter symbols at the same time during the base game. This brings you into a Bonus Gamble, where you have a choice to either play the TRUE GRIT bonus game or to Gamble. The TRUE GRIT bonus keeps the base game's mechanics and has Progressive Bounty Hunter Multipliers!"
+          },
+          {
+                "title": "BONUS GAME - FOUR SHOTS TO FREEDOM",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus game keeps the base game's mechanics. In addition, a Bullets & Bounty Bar is displayed outside the grid that will award DuelSpins and VS symbols."
+          },
+          {
+                "title": "MAKE HER DAY",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This Hidden Epic Bonus game keeps the mechanics of the FOUR SHOTS TO FREEDOM bonus, starting the first spin at DuelSpin Level 1. Additionally, it also has Progressive Bounty Hunter Multipliers!"
+          }
+    ],
+  },
+  "Miami Mayhem": {
+    features: [
+          {
+                "title": "EXPANDING CREW REELS",
+                "description": "Crew Reel symbols can land on the grid. When they expand, they cover an entire reel with a specific Crew member, acting as Wilds and contributing multipliers to any wins on that reel."
+          },
+          {
+                "title": "WANTED MISSIONS",
+                "description": "When a Wanted symbol lands, it triggers a Mission. Completing missions by landing the required symbols awards escalating rewards including cash prizes, multipliers, and bonus entry. Progressive Wanted Levels increase mission rewards as the bonus progresses."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS BUY",
+                "description": "Where permitted by market conditions, this game offers: BONUSHUNT FEATURESPINS - Each spin is 5 times more likely to trigger a bonus game! Cost 3x bet. BEACH PLEASE FEATURESPINS - Each spin guarantees that at least 2 expanding Crew Reels land! Cost 50x bet. MAYHEM MODE FEATURESPINS - Each spin guarantees that 1 Wanted symbol lands, triggering a Mission! Cost 50x bet. THE HIT - 10 free spins with Progressive Wanted Levels and a guaranteed Mission at the start! Cost 100x bet. WE SPLIT - 10 free spins with a Mayhem Bar, which collects expanded Crew Reels! Cost 300x bet."
+          }
+    ],
+  },
+  "Booze Bash": {
+    features: [
+          {
+                "title": "FS PAIRS",
+                "description": "FS Pairs are scatter symbols that trigger bonus games when 1, 2, or 3 pairs land simultaneously. Unlike standard FS symbols, they work in pairs — both symbols of a pair must land on the same spin to count. Landing additional FS Pairs during a bonus awards +2 extra free spins per pair."
+          },
+          {
+                "title": "BASH BAR",
+                "description": "In the TOP-SHELF TROUBLE and HAPPY HOUR bonuses, a Bash Bar is added as an extra row at the top of the grid. After each spin, once all regular wins are collected, the Bash Bar reveals one symbol per reel from left to right, potentially creating additional wins."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - GUILTY AS GIN",
+                "description": "Activate this bonus with 10 free spins by landing 1 FS Pair during the base game. This bonus game maintains the base game's mechanics with an increased chance of landing high-paying symbols, Multipliers and Wild symbols. Landing additional FS Pairs in the bonus awards 2 extra free spins per pair."
+          },
+          {
+                "title": "BONUS GAME - TOP-SHELF TROUBLE",
+                "description": "Activate this bonus with 10 free spins by landing 2 FS Pairs during the base game. This bonus game has a Bash Bar added as an extra row at the top of the grid. After each spin, once all regular wins are collected, the Bash Bar reveals a symbol for each reel from left to right."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - HAPPY HOUR",
+                "description": "Activate this bonus with 10 free spins by landing 3 FS Pairs during the base game. This Hidden Epic Bonus game maintains the mechanics of the TOP-SHELF TROUBLE bonus. In addition, all Special Symbols can be revealed in the Bash Bar. Landing additional FS Pairs in the bonus awards 2 extra free spins per pair."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Winning pairs cannot be formed in the Bash Bar."
+          }
+    ],
+  },
+  "Aiko and the Wind Spirit": {
+    features: [
+          {
+                "title": "SPIRIT SYMBOLS AND ZEPHYR CRESTS",
+                "description": "Spirit symbols can land on the grid and act as Wilds with multipliers when part of a win. Zephyr Crest symbols trigger a special mechanic where they select and transform groups of symbols, increasing the chance of winning combinations. Wild Spirit Multipliers combine their values when multiple are part of the same win."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - SPIRITED SPINS",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with more Spirit and Zephyr Crest symbols!"
+          },
+          {
+                "title": "BONUS GAME - WHISPERING WINDS",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins with a Memory that stores Wild Spirit Multipliers throughout the bonus!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - MIDNIGHT MAGIC",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins a Memory and at least 2 Wild Spirits on each spin!"
+          }
+    ],
+  },
+  "Invictus": {
+    features: [
+          {
+                "title": "LEFT AND MIDDLE MULTIPLIERS",
+                "description": "Multiplier symbols can land on specific reels — Left Multipliers on reel 1 and Middle Multipliers on reel 3. When activated as part of a win, their values are applied to the total win. If multiple Multiplier symbols are part of the same win, their values are added together before being applied."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - TEMPLE OF JUPITER",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with an increased chance of triggering higher Multipliers!"
+          },
+          {
+                "title": "BONUS GAME - IMMORTAL GAINS",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 10 free spins and all Left Multipliers will have a minimum of 5x on each spin!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - DOMINUS MAXIMUS",
+                "description": "Land 5 FS scatter symbols to trigger the ultimate bonus round! This Hidden Epic Bonus gives you 10 free spins with an additional Middle Multiplier applied to Reel 3, offering the chance to trigger all 3 Multipliers!"
+          }
+    ],
+  },
+  "Freds Food Truck": {
+    features: [
+          {
+                "title": "GREEN CHILI MULTIPLIERS",
+                "description": "Green Chili Multiplier symbols can land on the grid. When part of a winning combination, their multiplier values are applied to a Global Multiplier. In the BIG MENU bonus, all landed Green Chili multipliers are progressively applied to the Global Multiplier, and the Global Multiplier does not reset between spins."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BIG MENU",
+                "description": "Landing 4 FS symbols at the same time in the base game awards 15 free spins! In this feature all landed Green Chili multipliers are progressively applied to the Global Multiplier and the Global Multiplier does not reset between spins!"
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all paying symbols in the paytable. The FS symbol does not appear during Free Spins."
+          }
+    ],
+  },
+  "The Wildwood Curse": {
+    features: [
+          {
+                "title": "CURSED CLUSTERS AND NIGHTMARE RESPINS",
+                "description": "Cursed Cluster symbols can land on the grid. When a winning combination occurs near a Cursed Cluster, it activates and spreads, turning adjacent symbols into matching high-paying symbols or Wilds, triggering Nightmare Respins. Respins continue as long as new wins occur from the spreading Cursed Clusters."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - THE PLAYGROUND",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus keeps the mechanics of THE SWAMP with an increased chance of landing Cursed Clusters!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - NO ESCAPE",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This bonus keeps the mechanics of THE SWAMP and each spin guarantees that at least 1 Cursed Cluster lands! SPECIAL SYMBOLS: FS symbols cannot land during Nightmare Respins or during THE SWAMP, THE PLAYGROUND or the NO ESCAPE. The Twins max Multiplier is 1000x."
+          }
+    ],
+  },
+  "Eye of Medusa": {
+    features: [
+          {
+                "title": "SUPER CASCADES",
+                "description": "When a winning combination occurs, all winning symbols and all regular paying symbols of the same type are removed from the grid. New symbols cascade in, potentially creating new wins. The sequence continues until no new wins occur."
+          },
+          {
+                "title": "MEDUSA SYMBOLS",
+                "description": "Medusa symbols land as either Silver or Gold. When a win with lower-paying symbols occurs, the Medusa symbol activates: it clears all symbols from the grid and drops to the bottom row, staying sticky until the end of the spin. Gold Medusa symbols carry a multiplier of up to 20x applied to any wins they contribute to."
+          },
+          {
+                "title": "PETRIFIED SYMBOLS",
+                "description": "High-paying symbols that land during cascades can become Petrified, turning to stone and staying sticky at the bottom of the grid. Petrified symbols contribute to wins on subsequent cascades and cannot be removed until the spin ends."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "SNAKES AND STONES",
+                "description": "Land 3 FS scatter symbols to trigger this bonus game. 10 free spins with an increased chance of landing Medusa symbols. Petrified symbols remain sticky throughout the bonus. Landing additional FS symbols awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          },
+          {
+                "title": "GORGON'S GOLD",
+                "description": "Land 4 FS scatter symbols to trigger this bonus game. 12 free spins with the mechanics of Snakes and Stones. In addition, Gold Medusa symbols appear more frequently and Petrified symbols can accumulate higher multiplier values throughout the feature. Landing additional FS symbols awards extra free spins: 2 FS symbols award +2 free spins, 3 FS symbols award +4 free spins."
+          }
+    ],
+  },
+  "Marlin Masters: The Big Haul": {
+    features: [
+          {
+                "title": "MARLIN AND GOLDEN MARLIN SYMBOLS",
+                "description": "Marlin symbols display cash values and are collected via LootLines (3+ Marlin symbols on a payline) or by Fisherman symbols. Golden Marlin symbols have enhanced minimum values (5x+ in bonus) and when collected by a Fisherman, can reveal jackpot prizes. Possible Marlin values: 1x-1,000x bet."
+          },
+          {
+                "title": "FISHERMAN SYMBOLS",
+                "description": "Fisherman symbols collect all Marlin and Golden Marlin symbols on the grid. Fisherman can also land with a Multiplier value of up to x20, applied to the cash value of all collected Marlin symbols. In the HOOKED ON PARADISE bonus, Sticky Fisherman symbols collect Marlins and remain on the grid throughout the round."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - CATCH ME IF YOU CAN",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the DON'T BE KOI bonus. In addition, the upgrade levels in this bonus are even more powerful and all Fisherman symbols are guaranteed to have a Multiplier of at least x2! Golden Marlin symbols that land will have a minimum value of 5x."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - HOOKED ON PARADISE",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This Hidden Epic Bonus keeps the base game's mechanics. During this bonus, Sticky Fisherman symbols can land, collecting Marlin symbols and remaining on the grid throughout the round. 1 Sticky Fisherman symbol will be on the grid from the start."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+  },
+  "Rainbow Princess": {
+    features: [
+          {
+                "title": "MAGIC FRAME MULTIPLIERS",
+                "description": "Magic Frame Multiplier symbols can land on the grid and reveal Multiplier values. When part of a winning combination, their values contribute to a combined multiplier applied to the win. Progressive Magic Frame Multipliers in the bonus rounds grow with each spin they remain active. If multiple are part of the same win, their values are added together."
+          },
+          {
+                "title": "RAINBOW RUSH BAR",
+                "description": "In the MAKE IT RAINBOW bonus, a Rainbow Rush Bar is displayed outside the grid. Each time a winning cluster is formed, the Rainbow Rush Bar increases. When full, it triggers additional effects that boost Multiplier values or add extra winning positions."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - MAKE IT RAINBOW",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. This bonus game keeps the mechanics of the TIARA TREASURE bonus. In addition, a Rainbow Rush Bar is displayed outside the grid. Each time a winning cluster is formed, the Rainbow Rush Bar increases."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - THRONE OF STARLIGHT",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. This Hidden Epic Bonus game keeps the mechanics of the TIARA TREASURE bonus. Each position will have a Sticky Progressive Magic Frame Multiplier from the start! All Magic Frame Multipliers will start with a minimum value of 4x."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+  },
+  "Ultimate Slot Of America": {
+    features: [
+          {
+                "title": "LIBERTY GEMS",
+                "description": "The Liberty Gem symbol acts as a Wild multiplier that substitutes for the other paying symbols in the paytable. Landing Liberty Gems triggers a Freedom Respin, with all Liberty Gems staying on the grid during that spin. If more Liberty Gems land, another Freedom Respin is awarded."
+          },
+          {
+                "title": "GEM CLUSTERS",
+                "description": "Landing 4 or more Liberty Gems in a square formation of 2x2, 3x3, 4x4 or 5x5 will form a Gem Cluster."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Liberty Gems and Gem Clusters substitute for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - SPIN-DEPENDENCE DAY",
+                "description": "Activate this bonus with 10 free spins by landing 3 FS scatter symbols at the same time during the base game."
+          },
+          {
+                "title": "BONUS GAME - RED, WHITE, BLING!",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - PURSUIT OF RICHES",
+                "description": "Activate this bonus with 10 free spins by landing 5 FS scatter symbols at the same time during the base game."
+          }
+    ],
+  },
+  "Spinman": {
+    features: [
+          {
+                "title": "JUSTICE REELS:",
+                "description": "When a Spinman symbol lands, it expands into a Wild Justice Reel if it forms at least one winning combination. Expanded Justice Reels unlock powerful bonus mechanics for bigger wins!"
+          },
+          {
+                "title": "BOOSTER WHEEL:",
+                "description": "When a Justice Reel expands, it triggers the Booster Wheel, awarding one of six Multipliers or an instant MAX WIN. Multipliers range from 2x-500x. If multiple Justice Reels contribute to a win, their Multipliers combine before applying to the payout!"
+          },
+          {
+                "title": "REEL HEROES:",
+                "description": "The Hidden Epic Bonus is an exclusive bonus game that can't be purchased. Players must trigger it purely by chance in the base game, which adds to its allure. It keeps the same mechanics as the base game but consistently delivers powerful payouts for a bigger chance at an Epic Win!"
+          },
+          {
+                "title": "WHAT TO LOOK OUT FOR:",
+                "description": "Spinman symbols expand into Wild Justice Reels with possible multipliers up to 500x, boosting your wins! Watch out for the MAX WIN on the Booster Wheel which is instantly awarded! And let's not forget about those FS symbols! Landing 3 or more at the same time will trigger one of the three Bonus Games!"
+          },
+          {
+                "title": "BONUS BUY",
+                "description": "Where permitted by market conditions, this game offers the following bonus buy options: BONUSHUNT FEATURESPINS - Each spin is 5 times more likely to trigger a bonus game! Cost 3x bet HEROIC FEATURESPINS - 2 guaranteed Spinman symbols on every spin for big wins! Cost 50x bet POWER SURGE - 10 free spins with enhanced base game features and extra Spinman symbols! Cost 90x bet SPINFINITY - 10 free spins with at least 1 Spinman symbol on each spin! Cost 200x bet"
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAMES",
+                "description": "Spinman features three exciting bonus games with upgraded mechanics taking your game experience to the next level!"
+          },
+          {
+                "title": "HIDDEN EPIC BONUS GAME",
+                "description": ""
+          }
+    ],
+  },
+  "Pray For Three": {
+    features: [
+          {
+                "title": "TOTAL WIN BAR",
+                "description": "All wins during each spin are collected in the Total Win Bar outside of the grid."
+          },
+          {
+                "title": "WHEEL OF SIN",
+                "description": "The Wheel of Sin is positioned outside the grid. Once activated, each section of the wheel will reveal either an Adding or Multiplying value. The three sections of the Wheel can have the following multiplier values: First section, Adding Multipliers: 2x, 3x, 4x, 5x, 10x, 25x, 50x, 100x, 200x, 333x Second section, Adding Multipliers: 2x, 3x, 4x, 5x, 10x, 25x, 50x, 100x, 200x, 333x or Multiplying Multipliers: x2, x3, x4, x5, x10, x20, x33 Third section, Multiplying Multipliers: x2, x3, x4, x5, x10, x20, x33 Activate the Wheel of Sin by landing Prayer Hand or Divine Prayer Hand symbols on the grid during a win. A landed Prayer Hand symbol will reveal a number between 1-3 which indicates how many sections on the Wheel of Sin will activate. A landed Divine Prayer Hand symbol will always activate all three sections."
+          },
+          {
+                "title": "WICKED WAYS BONUS",
+                "description": "Activate this bonus with 10 free spins by landing 3 FS scatter symbols at the same time during the base game. This bonus game maintains the base game mechanics with an increased chance of landing both types of Prayer Hand symbols as well as Wilds."
+          },
+          {
+                "title": "LIVING ON A PRAYER BONUS",
+                "description": "Activate this bonus with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. Throughout this bonus, there is an increased chance of landing Divine Prayer Hand symbols!"
+          },
+          {
+                "title": "FLAMES OF FORTUNE BONUS",
+                "description": "Activate this Epic bonus with 10 free spins by landing 5 FS scatter symbols. Each spin guarantees that one Divine Prayer Hand symbol lands! The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Danny Dollar": {
+    features: [
+          {
+                "title": "DOLLAR-REELS:",
+                "description": "When a Danny symbol lands, it expands upward into a Wild Dollar-Reel if it forms a winning combination. Expanded Dollar-Reels act as Wilds on all covered positions. If a Dollar-Reel expands through a Wild, it creates a multiplier that is applied to the whole reel. Dollar-Reel multipliers are added together giving your win a dollar dollar boost!"
+          },
+          {
+                "title": "NUDGE SYMBOLS:",
+                "description": "When Nudge symbols appear, they shift Dollar-Reels down one row after expanding, increasing their coverage and boosting your chances of a dazzling win!"
+          },
+          {
+                "title": "DOLLAR DASH:",
+                "description": "In this bonus game, Reel Indicators mark where the last Danny symbol landed, preventing new ones from landing higher up and guaranteeing that the Dollar-Reels are longer."
+          },
+          {
+                "title": "NO BILLS, NO THRILLS:",
+                "description": "This bonus game features a Progressive Global Multiplier, which collects all the Dollar-Reel multipliers and applies them to all your wins!"
+          },
+          {
+                "title": "BONUS BUY",
+                "description": "Where permitted by market conditions, this game offers the following bonus buy options: BONUSHUNT FEATURESPINS - Each spin is 5 times more likely to trigger a bonus game! Cost 3x bet DANNY FEATURESPINS - 3 guaranteed Danny symbols on every spin for big wins! Cost 50x bet DOLLAR DASH - 10 free spins where Nudge symbols can appear. Cost 100x bet NO BILLS, NO THRILLS - 10 free spins with a Progressive Global Multiplier. Cost 300x bet"
+          }
+    ],
+    bonus_games: [],
+  },
+  "Rad Maxx": {
+    features: [
+          {
+                "title": "CRAZY CAT SYMBOLS:",
+                "description": "Look out for the Crazy Cat symbols, which act as Wild multipliers! These cats can reveal multiplier values between x2 and x20. When they join in on a win, they'll multiply your payout by the value shown. And if you land more than one Crazy Cat in a winning combination? They'll multiply together first, making your win even more insane!"
+          },
+          {
+                "title": "PAY DIRECTION ARROWS:",
+                "description": "Your secret weapon to scoring those big wins! These arrows sit outside the grid and show the directions in which your winning paylines will be calculated. The left arrow is always active, but things get exciting when you land a Wild Plus symbol."
+          },
+          {
+                "title": "WILD PLUS SYMBOLS:",
+                "description": "When a Wild Plus symbol hits the grid, it triggers a frenzy! These symbols activate 1 to 3 extra Pay Direction Arrows, changing the way the game pays out in a clockwise direction. So, every time you land a Wild Plus, your payout has the potential to be even bigger. But don't get too comfortable, because the arrows reset with each spin!"
+          }
+    ],
+    bonus_games: [],
+  },
+  "Reign Of Rome": {
+    features: [
+          {
+                "title": "TRIBUTE SYMBOLS AND LOOTLINES",
+                "description": "Tribute symbols are dynamic multiplier symbols that award a cash prize based on the combined value of the Tribute in a LootLine, multiplied with your bet amount. A LootLine is formed when there is a winning payline of Tribute symbols on the grid. There are four variants of Tribute symbols: Adding Tribute symbols (1x-10x), Revealing Adding Tribute symbols (15x-500x), Multiplying Tribute symbols (x2-x5), and Revealing Multiplying Tribute symbols (x6-x25). Adding Tribute multipliers are added to the cumulative LootLine value, while Multiplying Tribute multipliers multiply the value."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "More than one FS symbol cannot land in the same reel during one spin."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "BONUS GAME - PATH TO POWER",
+                "description": "Land 3 FS scatter symbols at the same time in the base game to activate this bonus game with 10 free spins. This bonus game maintains the same mechanics of the base game but with an increased chance of landing Tribute symbols with higher values. Landing additional FS symbols during the bonus awards extra free spins."
+          },
+          {
+                "title": "BONUS GAME - THIS IS ROME",
+                "description": "Land 4 FS scatter symbols at the same time in the base game to activate this bonus game with 10 free spins. This bonus includes all features from PATH TO POWER plus a LootBar below the grid where non-winning Tribute symbols are stored progressively. When all five LootBar positions are filled, the stored values are awarded."
+          },
+          {
+                "title": "HIDDEN EPIC BONUS - FIGHT FOR GLORY",
+                "description": "Land 5 FS scatter symbols at the same time in the base game to activate this bonus game with 10 free spins. All LootBar positions start with 20x multipliers in this bonus, and all Tribute values stored in the LootBar are kept until the end of the bonus and then paid out as one big prize."
+          }
+    ],
+  },
+  "Fighter Pit": {
+    features: [
+          {
+                "title": "PICK YOUR FIGHTER",
+                "description": "Decide which fighters should be displayed outside the grid by clicking on their miniature images on the top of the grid. This choice will have no impact on the outcome of the game."
+          },
+          {
+                "title": "WILD FIST REELS",
+                "description": "When a Fist symbol activates, it expands into a Wild Fist Reel that starts from the position of the Fist symbol and rises upwards to the top of the reel. Fist symbols only activate if the expanded Wild Reel is part of at least one winning combination once expanded. Wild Fist Reels act as Wild symbols on all positions they cover and substitute for all other paying symbols. Fist symbols belong to either the Red team or the Green team. If the Fist symbol passes through a Fighter symbol of the opposite team or a Wild symbol, a multiplier will be added to the Wild Fist Reel. If a winning combination includes more than one Wild Fist Reel, their multipliers are added together. Possible multiplier values: 2x, 3x, 4x, 5x, 6x, 7x, 8x, 9x, 10x, 15x, 20x, 25x, 50x, 100x, 200x."
+          },
+          {
+                "title": "SHOWDOWN",
+                "description": "Land 3 FS scatter symbols at the same time in the base game to activate this bonus game with 10 free spins. Each team starts at Victory Level 3+. Each time a Fist symbol punches an opponent's Fighter or Wild, the Fist's team earns one Victory Point. When a team has collected three Victory Points, a respin with an Epic Drop is awarded and the winning team's Victory Level increases by one. The number of Fist symbols guaranteed in the Epic Drop depends on the Victory Level."
+          },
+          {
+                "title": "ULTIMATE SHOWDOWN",
+                "description": "Land 4 FS scatter symbols at the same time in the base game to activate this bonus game with 10 free spins. This bonus maintains the mechanics of SHOWDOWN, except each team starts at Victory Level 4+."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Wishbringer": {
+    features: [
+          {
+                "title": "WILD CLOUD ROWS",
+                "description": "Genie symbols can land on reels 2-6. When it lands, the Genie symbol will Blow Clouds to the left across all positions on the same row. All positions that are covered by a Genie symbol or Clouds are counted as Wild symbols that substitute for all symbols in the paytable. FS symbols will remain active even when covered by Wild symbols, provided they are part of a win."
+          },
+          {
+                "title": "BONUS BUY",
+                "description": "Where permitted by market conditions, this game offers the following bonus buy options: BONUSHUNT FEATURESPINS - Each spin is 10 times more likely to trigger a bonus game! Cost 5x bet. GENIE'S WISH FEATURESPINS - At least one Genie symbol guaranteed to land on reels 2-6! Cost 50x bet. GENIE'S MAGIC FEATURESPINS - At least one Genie symbol guaranteed to land on reels 4-6! Cost 200x bet. ARABIAN NIGHTS - Enter the bonus with 10, 20 or 40 free spins! Cost 110x bet."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "ARABIAN NIGHTS BONUS GAME",
+                "description": "Land FS scatter symbols at the same time in the base game to activate this bonus game with a varying number of free spins: 3 FS symbols awards 5 free spins, 4 FS symbols awards 10 free spins, 5 FS symbols awards 20 free spins, 6 FS symbols awards 40 free spins. Landing additional FS symbols during the bonus awards additional free spins: 2 FS symbols awards 2 extra spins, 3 FS symbols awards 4 extra spins."
+          }
+    ],
+  },
+  "Life And Death": {
+    features: [
+          {
+                "title": "WILD MULTIPLIERS AND EXPANDING WILD REELS",
+                "description": "There are four Wild Multiplier symbols that substitute for all other symbols in the paytable. Wild Multipliers can land on reels 2-5, each connected to a specific reel. Blue Pestilence (reel 2): 2x, 3x, 4x. Red War (reel 3): 5x, 6x, 7x, 8x, 9x. Yellow Famine (reel 4): 10x, 15x, 20x, 25x. Green Death (reel 5): 30x, 40x, 50x, 75x, 100x, 200x. Wild Multiplier symbols expand into full Wild Reels if the expanded reel would be part of at least one winning combination. If more than one Wild Reel are part of the same winning combination, their multipliers are added together."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Wild Multiplier symbols substitute for all other symbols in the paytable. FS symbols and Wild Multipliers cannot land in the same reel at the same time."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "DEVASTATION BONUS GAME",
+                "description": "Land 3 FS scatter symbols at the same time in the base game to activate the DEVASTATION bonus game with 10 free spins. This bonus maintains the mechanics of the base game with an increased chance of landing Wild Multipliers! Landing additional FS symbols during the bonus awards extra free spins."
+          },
+          {
+                "title": "RECKONING BONUS GAME",
+                "description": "Land 4 FS scatter symbols at the same time in the base game to activate the RECKONING bonus game with 10 free spins. This bonus includes all the features from DEVASTATION plus persistent activated Death Reels! Landing a Wild Multiplier on its connected reel will activate that reel as a Death Reel, so its connected Wild Multiplier will expand into a Wild Reel regardless of which central reel it lands on."
+          }
+    ],
+  },
+  "Dorks Of The Deep": {
+    features: [
+          {
+                "title": "EXPANDING WILD REELS",
+                "description": "When a Treasure Chest symbol lands it will expand into a Wild Reel if it would be part of a winning combination once expanded. Expanded Wild Reels show one of three characters: Octopus (2x-9x multiplier), Mermaid (10x-20x multiplier), or Ocean King (25x-200x multiplier). The character's multiplier is applied across the entire Wild Reel. If more than one Wild Reels are part of the same winning combination, their multipliers are added together."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "DEEP BLUE BONUS GAME",
+                "description": "Land 3 FS scatter symbols at the same time to activate with 10 free spins. A landed Treasure Chest symbol always expands into a Wild Reel regardless of whether it is part of a win or not. Expanded Wild Reels reveal 0-3 lives and are sticky into the next spin as long as they have lives remaining. Last Chance feature activates if Wild Reels remain on the last free spin."
+          },
+          {
+                "title": "DOWN UNDER BONUS GAME",
+                "description": "Land 4 FS scatter symbols at the same time to activate with 10 free spins. Maintains DEEP BLUE mechanics. Sticky expanded Wild Reels never receive a multiplier from a lower character tier than the initially revealed tier."
+          },
+          {
+                "title": "HIDDEN TREASURES BONUS GAME",
+                "description": "Land 5 FS scatter symbols at the same time to activate with 10 free spins. Maintains DOWN UNDER mechanics. Always guaranteed to have two expanded Wild Reels active on the grid at all times."
+          }
+    ],
+  },
+  "Strength Of Hercules": {
+    features: [
+          {
+                "title": "ROTOGRID",
+                "description": "Each grid rotation turns the grid a quarter turn clockwise and unlocks the possibility of new wins. If multiple RotoGrid symbols are present, they activate one at a time. Maximum 3 RotoGrid symbols can land on the same spin."
+          },
+          {
+                "title": "CONNECTING WILDS",
+                "description": "After each grid rotation, any Wild symbols on the same reel will connect, filling all positions between them with additional Wild symbols."
+          },
+          {
+                "title": "MIGHT OF HERCULES",
+                "description": "When the current grid has settled, there is a chance Hercules hits the grid. When this happens, all occurrences of a randomly chosen low-paying symbol are replaced with Wild symbols."
+          },
+          {
+                "title": "BONUS CHOICE",
+                "description": "Landing 3 or 4 FS scatter symbols brings you into the Bonus Choice menu. With 3 FS, you may choose LABORS or LABYRINTH. With 4 FS, you may choose GODLY LABORS or GODLY LABYRINTH."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "LABORS BONUS GAME",
+                "description": "10 free spins with higher chance of landing RotoGrid and Wild symbols. Additional FS symbols during the feature award extra free spins."
+          },
+          {
+                "title": "GODLY LABORS BONUS GAME",
+                "description": "Variant of LABORS where RotoGrid and Wild symbols appear more frequently."
+          },
+          {
+                "title": "LABYRINTH BONUS GAME",
+                "description": "8 free spins. Coin and FS symbols fall through Cracked Stone symbols toward Treasure Chests at the bottom. Each Treasure Chest has a progressive multiplier. Adding Coins (1x-100x) add to the chest value, Multiplying Coins (x2-x20) multiply it. Grid may rotate to create new paths."
+          },
+          {
+                "title": "GODLY LABYRINTH BONUS GAME",
+                "description": "Variant of LABYRINTH with 10 free spins and higher-value Coins."
+          }
+    ],
+  },
+  "Hounds Of Hell": {
+    features: [
+          {
+                "title": "HELLHOUNDS",
+                "description": "Hellhound symbols are cash prize multipliers that spread and are collected before being multiplied with your bet. At the end of each spin, landed Hellhound symbols spread to the top of their respective reel. All multipliers are collected bottom-to-top, left-to-right. There are two types: Adding (1x, 2x, 3x, 4x, 5x, 10x, 15x, 20x, 25x, 50x) and Multiplying (x2, x3, x4, x5, x10). Only 1 Hellhound symbol can land on a reel at a time."
+          },
+          {
+                "title": "ROARING PACKS OF HELL",
+                "description": "If two or more Hellhound symbols appear on adjacent reels on the same row, they form a Roaring Pack with increased multiplier values. Adding: 5x, 10x, 15x, 20x, 25x, 50x, 100x. Multiplying: x3, x4, x5, x10, x20."
+          },
+          {
+                "title": "HOUNDS ARE LOOSE",
+                "description": "Can trigger randomly on a spin with no new wins. All low-paying symbols are removed and new symbols drop in, with an increased chance of landing Hellhound symbols."
+          },
+          {
+                "title": "BONUS GAMBLE",
+                "description": "When entering a bonus game, you may choose to gamble. Choose up to 3 of 5 Hellfire Orbs, each containing 2-10 free spins or a Bonus Upgrade."
+          },
+          {
+                "title": "WHAT THE HELL! BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing 3 FS scatter symbols. All multiplier values collected from Hellhounds are kept above the reels until the end of the round and progressively increased. Hounds are Loose guaranteed after 3 non-winning spins in a row."
+          },
+          {
+                "title": "WHO LET THE HOUNDS OUT?!? BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing 4 FS scatter symbols. Persistent activated Hell Reels - a Hellhound is guaranteed to land on each activated Hell Reel on each free spin. In this bonus, Hellhound multipliers are paid out times your bet at the end of each free spin, and totals reset between spins."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "FS symbols can not appear above Hellhound symbols on the same reel."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Frkn Bananas": {
+    features: [
+          {
+                "title": "BANANA SPLIT? NO, BANANA SPREAD!",
+                "description": "Spreading Banana symbols can point either to the left, or up. When a Spreading Banana lands, additional Spreading Banana symbols spread from that symbol either left or up. The spreading only occurs if the Spreading Bananas would be part of at least one winning combination after spreading. All Spreading Banana symbols are wild multipliers (1x, 2x, 3x, 4x, 5x, 10x, 15x, 20x, 25x, 50x, 75x, 100x). Created spread Bananas take on the same multiplier value as the originating symbol."
+          },
+          {
+                "title": "BANANZA!",
+                "description": "Land 3 FS scatter symbols to activate with 10 free spins. Increased chance of landing Spreading Banana symbols with high-value multipliers. Spreading Bananas land on more favorable positions. Landing additional FS symbols awards extra free spins."
+          },
+          {
+                "title": "BANANA BLITZ!",
+                "description": "Land 4 FS scatter symbols to activate with 10 free spins. Features Sticky Banana symbols that stay on the grid until the end of the bonus, each receiving a new random multiplier each spin. If at least one Sticky Banana is on the grid and a Go Bananas symbol lands, the Go Bananas mechanic activates - revealing a value between 3-10, creating that many Banana copies from each Sticky Banana. Copied Bananas appear in random positions and take the same multiplier as the originating Sticky Banana."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "All types of Banana symbols are Wild and substitute for other symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Marlin Masters": {
+    features: [
+          {
+                "title": "MARLIN SYMBOL",
+                "description": "Marlin symbols bring dynamic payouts to the reels! Each displays a cash prize worth 1-1,000x your bet. Possible values: 1x, 2x, 3x, 4x, 5x, 6x, 7x, 8x, 9x, 10x, 15x, 20x, 25x, 50x, 100x, 250x, 500x, 1000x. Collect them via the Fisherman or a winning Lootline with 3+ symbols."
+          },
+          {
+                "title": "FISHERMAN SYMBOL",
+                "description": "The Fisherman collects all Marlin cash prizes on the grid, with multipliers up to 20x to boost your total. Multiple Fishermen work together for even bigger payouts."
+          },
+          {
+                "title": "WILD SYMBOL",
+                "description": "The Wild symbol substitutes for all other symbols in the paytable."
+          },
+          {
+                "title": "REEL IT IN! BONUS FEATURE",
+                "description": "Land 3 FS symbols to activate with 10 free spins. The Marlin Progress Bar advances each time a Fisherman symbol lands. Upgrade 1 (4 Fishermen): 10 extra spins, all Fisherman multipliers min x2. Upgrade 2: 10 more extra spins, all Fisherman multipliers min x4. Upgrade 3: 10 more spins, all Fisherman multipliers min x10."
+          },
+          {
+                "title": "OFF THE HOOK! BONUS FEATURE",
+                "description": "Land 4 FS symbols to activate with 15 free spins. Same Marlin Progress Bar mechanic but with enhanced rewards. All Fisherman multipliers start at min x2. Upgrade 1: 15 more spins, min x4. Upgrade 2: 15 more spins, min x10. Upgrade 3: 15 more spins, min x15."
+          },
+          {
+                "title": "PLENTY OF FISH IN THE SEA BONUS FEATURE",
+                "description": "Land 5 FS symbols to activate with 10 free spins. Every Marlin symbol carries a minimum multiplier of 5x. On every spin, at least one Marlin symbol and one Fisherman symbol will land."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Phoenix Duelreels": {
+    features: [
+          {
+                "title": "DUELREELS",
+                "description": "When a VS symbol lands it will expand into a wild DuelReel if it would be part of or create a winning combination. Each DuelReel has two multipliers, connected to the Phoenix and the Water Dragon. The surviving duelist's multiplier is applied across the entire reel. If more than one DuelReels are part of the same winning combination, their multipliers are added together. Only 1 VS symbol can land on a reel at a time."
+          },
+          {
+                "title": "RESURRECTION SPINS",
+                "description": "When the Phoenix loses the duel on at least one DuelReel, you will be awarded a Resurrection Spin re-spin. During this re-spin, at least 1 VS symbol is guaranteed to land. The process repeats until no DuelReels with losing Phoenixes appear."
+          },
+          {
+                "title": "BONUS GAMBLE",
+                "description": "When entering a bonus game, you may choose to gamble with 5 Phoenix Eggs. Choose up to 3 Eggs, each possibly containing 2-10 free spins or a Bonus Upgrade to the RISE OF THE PHOENIX bonus."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "FIRE AND WATER BONUS GAME",
+                "description": "Activate with 10 free spins by landing 3 FS scatter symbols. Retains base game features with better chance of landing more VS symbols. Landing additional FS symbols awards extra free spins."
+          },
+          {
+                "title": "RISE OF THE PHOENIX BONUS GAME",
+                "description": "Activate with 10 free spins by landing 4 FS scatter symbols. Same enhanced features as FIRE AND WATER, plus enhanced RESURRECTION SPIN re-spins where the number of VS symbols that land equals the number of DuelReels with losing Phoenixes."
+          }
+    ],
+  },
+  "Le Viking": {
+    features: [
+          {
+                "title": "RAID SPINS RE-SPIN MODE",
+                "description": "Land 6 Coins of any kind at the same time to enter Raid Spins. This re-spin mode gives 3 refilling lives and contains only dead symbols, Coins, Diamonds and Clover symbols. All Coins, Diamonds, and Clovers become sticky. Each spin consumes 1 life; land a Coin, Diamond, or Clover to refill lives to 3. At the end, all Coins and Diamonds reveal a random cash value: Bronze Coins (0.2x-4x), Silver Coins (5x-20x), Gold Coins (25x-100x), Diamonds (150x-500x). Clover symbols then activate: Green Clover multiplies adjacent Coins/Diamonds (x2-x20), Gold Clover multiplies ALL Coins/Diamonds on the grid (x2-x20)."
+          },
+          {
+                "title": "BERSERK FREE SPINS",
+                "description": "Land 3 FS scatter symbols to activate with 3 refilling lives. At the start, FS positions receive Grid Multipliers with x2 multipliers. All Coins, Diamonds and Clover symbols become sticky. Magic Cauldron symbols activate all Grid Multipliers and Clovers and collect all Coins, Diamonds and previous Cauldrons."
+          },
+          {
+                "title": "VALKYRIE FREE SPINS",
+                "description": "Land 4 FS scatter symbols to activate with 3 refilling lives. Same mechanics as BERSERK but starts with 4 Grid Multipliers at x3 multipliers."
+          },
+          {
+                "title": "RAGNAROK FREE SPINS",
+                "description": "Land 5 FS scatter symbols to activate with 3 refilling lives. Same mechanics as BERSERK/VALKYRIE but starts with 5 Grid Multipliers at x5 multipliers."
+          },
+          {
+                "title": "JOURNEY TO VALHALLA FREE SPINS",
+                "description": "Land 6 FS scatter symbols to activate with 3 refilling lives. Same mechanics as above but starts with 6 Grid Multipliers at x10 multipliers. Bronze and Silver coins don't appear, drastically increasing chances of big wins."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Normal paying symbols and FS symbols do not appear in any bonus game or in Raid Spins."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Klowns": {
+    features: [
+          {
+                "title": "GAME DESCRIPTION",
+                "description": "Welcome to the most thrilling show in town with klowns. This is a 6-reel, 5-row drop cascades game with all-scatter wins. The max win is 10,000 times your bet."
+          },
+          {
+                "title": "TOTAL WIN BAR",
+                "description": "All wins are collected in the Total Win Bar outside the grid during each round. Any activated Klown Multipliers are added to the Total Win Bar at the end of a spin."
+          },
+          {
+                "title": "NEEDLE BOXES",
+                "description": "Landed Needle Box symbols activate once the grid is settled. Low-Symbol Needle Boxes remove all low-paying symbols (0.1x per removed symbol). High-Symbol Needle Boxes remove all high-paying symbols (0.5x per removed symbol)."
+          },
+          {
+                "title": "KLOWN MULTIPLIERS",
+                "description": "Activate at the end of each spin if at least one win occurred. Adding Klown Multipliers (2x, 3x, 4x, 5x, 10x, 15x, 20x, 25x, 50x, 100x, 250x, 500x) add to the Total Win Bar multiplier. Multiplying Klown Multipliers (x2, x3, x4, x5, x10, x20) multiply the Total Win Bar multiplier."
+          },
+          {
+                "title": "LESTER'S CASH CAROUSEL BONUS FEATURE",
+                "description": "Land 3 FS scatter symbols to activate with 10 free spins. Increased chance of landing high multipliers. Features a Bounty Balloon that collects all applied multipliers from the Total Win Bar. Epic Needle Boxes clear all symbols and pop the Balloon, combining all multipliers. Balloon resets to 0 at respawn."
+          },
+          {
+                "title": "JESTER'S JACKPOT BONUS FEATURE",
+                "description": "Land 4 FS scatter symbols to activate with 10 free spins. Retains LESTER'S CASH CAROUSEL mechanics. Bounty Balloon respawns with the previous multiplier value intact."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Fire My Laser": {
+    features: [
+          {
+                "title": "BOMBS AWAY",
+                "description": "There are 2 different types of Bombs and 2 different types of Lasers. Bombs and Lasers act as the primary win mechanic, hitting positions on the grid and removing symbols. Any paying symbols removed award a payout per paytable. All winnings collected in the Total Win Bar above the grid. Small Bomb: explodes over 3x3 area. Big Bomb: explodes over 5x5 area. X-Laser: shoots diagonal lines to grid edges. Super Laser: shoots diagonal lines with 3-symbol width and instantly destroys all Shields. Orbital Bombardment randomly strikes 3-7 positions (2x2 area each) after grid settles."
+          },
+          {
+                "title": "DEPLOY SHIELDS",
+                "description": "Certain symbols have a Shield requiring multiple hits to remove. Shields found on Multiplier symbols and FS symbols. 2-Shield Multipliers (2x-10x) and 3-Shield Multipliers (15x-500x) activate when Shield breaks. All activated Multipliers are added to Total Win Bar, then multiply all collected winnings at end of spin."
+          },
+          {
+                "title": "ALIEN ATTACK",
+                "description": "Unlock with 8 free spins by breaking the Shield on an Alien Mind FS symbol. All activated Multipliers are stored in a Progressive Multiplier, applied on any spin where at least one new Multiplier was added."
+          },
+          {
+                "title": "EXTERMINATION",
+                "description": "Unlock with 12 free spins by breaking the Shield on a Power Core FS symbol. All activated Multipliers stored in a Progressive Global Multiplier that is always active and applies to the Total Win Bar at end of every spin."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Only one FS symbol can land on the grid at a time."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Donut Division": {
+    features: [
+          {
+                "title": "GOOEY GUNS AND GOOEY WILDS",
+                "description": "When a Gooey Gun symbol lands it shoots Gooey Wild symbols to the left on the same row to the edge of the grid, then transforms into a Gooey Wild. Gooey Guns can land with a multiplier value (1x-100x). All Gooey Wild symbols fired from a Gooey Gun take on the same multiplier value as the Gun. When at least ane Gooey Wild with a multiplier is part of a winning payline, that multiplier is applied to the win."
+          },
+          {
+                "title": "BONUS CHOICE",
+                "description": "Landing 3 or 4 FS scatter symbols brings you into the Bonus Choice menu. With 3 FS: choose WAREHOUSE or STAKEOUT. With 4 FS: choose SUPER WAREHOUSE or SUPER STAKEOUT."
+          },
+          {
+                "title": "WAREHOUSE",
+                "description": "Enter the bonus with 3 refilling lives. Only special symbols appear: Adding Multipliers (1x-100x), Multiplying Multipliers (x2-x10), Battery symbols and Light-Switch symbols. Two flashlights reveal hidden symbols - land a special symbol to refill lives. Battery reveals 3x3 area. Light-Switch reveals entire grid. At end, Total Multiplier is multiplied with bet to determine win."
+          },
+          {
+                "title": "SUPER WAREHOUSE",
+                "description": "Variant of WAREHOUSE where all adding multipliers are minimum 5x."
+          },
+          {
+                "title": "STAKEOUT",
+                "description": "Retains base game mechanics with increased chance of landing Gooey Gun symbols and high-value multipliers."
+          },
+          {
+                "title": "SUPER STAKEOUT",
+                "description": "Variant of STAKEOUT. After the first Gooey Gun lands on a row, a Gooey Gun is guaranteed to land on that same row every subsequent spin."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Gooey Gun symbols can never land on reel 1. In the base game, FS symbols and Gooey Gun symbols cannot appear at the same time."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Shaolin Master": {
+    features: [
+          {
+                "title": "CASCADES",
+                "description": "When a winning combination occurs, all winning symbols are removed. New symbols cascade in, potentially creating new wins."
+          },
+          {
+                "title": "CHI ORBS",
+                "description": "Chi Orbs are wild multiplier symbols. Blue Chi Orb: starts at 1x, increases by +1 after each win participation. Red Chi Orb: starts at 1x, increases by +1 for each symbol in a winning cluster. Balance Chi Orb: appears only on cascades with a value equal to the product of Red and Blue Chi Orb multipliers on the grid. If multiple Chi Orbs are part of the same win, their values are multiplied together before being applied to the win."
+          },
+          {
+                "title": "THE STUDENT",
+                "description": "Activate with 10 free spins (3 FS) or 12 free spins (4 FS). Features a special Green Chi Orb and a Green Gem multiplier modifier symbol. Each reel has a multiplier below it that increases by 1x for each winning symbol on that reel. Green Gem modifiers (x2-x10) can also multiply the reel multiplier. When the Green Chi Orb lands on a reel, that reel's multiplier activates (globally applying) and 3 additional spins are awarded."
+          },
+          {
+                "title": "THE MASTER",
+                "description": "Activate with 3 refilling lives by landing 5 FS scatter symbols. Stone block symbols appear instead of regular paying symbols. Each reel has a multiplier above it, increased by Multiplier Modifier Blocks (Adding: Blue Gem 2x-10x, Epic Blue Gem 2x-10x; Multiplying: Green Gem x2-x10, Epic Green Gem x2-x10). Ice blocks cause a Multiplier Block to drop into the grid. Crusher Block destroys all Multiplier Blocks in its path and transforms into one block equal to the sum of destroyed values. Feature ends when 3 consecutive spins land no Multiplier Blocks."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Blue and Red Chi Orbs are persistent until end of round."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Snow Slingers": {
+    features: [
+          {
+                "title": "SNOW-VOLVER SYMBOL",
+                "description": "Normal and Epic Snow-volver symbols can land with 1-6 Snowballs. When a Snow-volver lands, Snowballs are thrown at random positions. Normal Snowball: first hit turns position into a wild Snow symbol; second hit adds a random multiplier (2x-200x) turning it into a Snow Multiplier. Epic Snowball: immediately creates a Snow Multiplier. If more than one Snow Multiplier is part of the same winning combination, their multipliers are added together."
+          },
+          {
+                "title": "THROW SNOW! BONUS FEATURE",
+                "description": "Land 3 FS scatter symbols to activate. Game transforms - only Snow-volver symbols, Reload symbols and non-paying symbols appear. 3 refilling lives. Six Gift Boxes with adding multipliers (2x-500x) or multiplying multipliers (x2-x20) displayed above the grid. Snowballs thrown at Gift Boxes to add multiplier values to the Snow-volver. Reload symbols reload Normal Snow-volvers and collect multipliers. At end, all sticky Snow-volver and Reload multipliers are added together and multiplied by bet."
+          },
+          {
+                "title": "YOU REAP WHAT YOU SNOW BONUS FEATURE",
+                "description": "Land 4 FS scatter symbols to activate with 10 free spins. Maintains base game mechanics. All Snow Multipliers become sticky and stay on the grid until the end of the feature."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Snow and Snow Multiplier symbols substitute for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Duel At Dawn": {
+    features: [
+          {
+                "title": "DUELREELS",
+                "description": "When a VS symbol lands it will expand into a wild DuelReel if it would be part of a winning combination once expanded. Each DuelReel has two multipliers for The Outlaw and The Sheriff. The surviving duelist's multiplier is applied across the entire reel. Possible multiplier values: 2x-200x. If more than one DuelReels are part of the same winning combination, their multipliers are added together. Only 1 VS symbol can land on a reel at a time."
+          },
+          {
+                "title": "THE OUTLAW FEATURE",
+                "description": "When an Outlaw symbol lands, it expands into a full wild Outlaw reel showing a revolver with 1-6 bullets representing the number of Wild symbols shot onto the grid. Each Outlaw reel also has a multiplier (2x-200x) that affects any winning combination including the Outlaw reel. Maximum 2 Outlaw symbols can appear on one spin."
+          },
+          {
+                "title": "WILD WILD WEST",
+                "description": "Land 3 FS scatter symbols to activate with 10 free spins. Maintains base game mechanics with increased chance of high-value multipliers on DuelReels and Outlaw reels, plus increased chance of landing VS and Outlaw symbols."
+          },
+          {
+                "title": "DUSK TIL DAWN",
+                "description": "Land 4 FS scatter symbols to activate with 10 free spins. Earn up to 4 DuelSpins with guaranteed VS symbols by landing Outlaw symbols and shooting a full revolver (6 Wilds). First DuelSpin: 2+ VS symbols; Second: 3+ VS symbols; Third: 4+ VS symbols; Fourth: 5 VS symbols. Each DuelSpin also awards 3 additional free spins."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable. A VS symbol and an Outlaw symbol can never land at the same time."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Wings Of Horus": {
+    features: [
+          {
+                "title": "WILD SYMBOL",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          },
+          {
+                "title": "ORB OF THE MOON",
+                "description": "When the Orb of the Moon symbol lands on the grid, it selects all instances of a random symbol on the grid, then replaces all the selected symbols and itself with a higher-paying symbol or a Wild symbol."
+          },
+          {
+                "title": "ORB OF THE SUN",
+                "description": "When the Orb of the Sun symbol lands on the grid, it selects all instances of two random symbols on the grid, then replaces all selected symbols and itself with a higher-paying symbol or a Wild symbol."
+          },
+          {
+                "title": "SACRED SCRIPTURE",
+                "description": "If the low symbols land in formation to spell out \"HORUS\" horizontally on the grid, you are awarded a cash payout of 500x your current bet."
+          },
+          {
+                "title": "REVENGE OF THE PHARAOH",
+                "description": "Activate with 10 free spins by landing at least 3 FS scatter symbols. Features two progression bars. Golden bar increases with each new win; when filled, purple Orb bar increases by one level. Before the last drop, the purple Orb bar activates: each filled level corresponds to one Orb (Moon or Sun) landing on the final drop (max 5). Purple Orb bar starts at level 1."
+          },
+          {
+                "title": "RISE OF THE FALCON",
+                "description": "Activate with 10 free spins by landing at least 4 FS scatter symbols. Same mechanics as REVENGE OF THE PHARAOH, but purple Orb bar starts at level 2."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Rise Of Ymir": {
+    features: [
+          {
+                "title": "YMIR'S CONQUEST",
+                "description": "The Ymir symbol is a wild multiplier (1x-100x). When it lands, it sticks and respins trigger until no new Ymir symbols land. If 4 Ymir symbols stick on the same reel, they merge into a Giant Ymir symbol with all multipliers combined."
+          },
+          {
+                "title": "MEGAMULTIPLIER",
+                "description": "When the Megamultiplier symbol lands while Ymir symbols are on the grid, all Ymir multiplier values are added into a global Megamultiplier that applies to all wins. Also awards a respin. Any new Ymir symbols that land during subsequent respins add their multiplier value to the Megamultiplier."
+          },
+          {
+                "title": "DAWN OF GODS",
+                "description": "Activate with 10 free spins by landing 3 FS scatter symbols. Maintains YMIR'S CONQUEST and Megamultiplier features with better chance of higher-value Ymir symbols."
+          },
+          {
+                "title": "FURY OF YMIR",
+                "description": "Activate with 10 free spins by landing 4 FS scatter symbols. Same features as DAWN OF GODS plus the Megamultiplier remains active between spins once activated. New Ymir symbols add to the global multiplier."
+          },
+          {
+                "title": "FALL OF YMIR",
+                "description": "Activate with 3 refilling lives by landing 5 FS scatter symbols. Only dead symbols, Volcanic Ymir, Megamultiplier, and Asgardian Orb symbols appear. Volcanic Ymir sticks with multipliers (1x-100x). Megamultiplier adds all Volcanic Ymir values to a global multiplier. Green Asgardian Orb adds global multiplier value to Volcanic Ymirs on that reel; Golden Asgardian Orb adds to ALL Volcanic Ymirs on the grid. At end, all Volcanic Ymir values are added together and multiplied by bet."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Megamultiplier symbol can only land together with or after a Ymir symbol lands."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Get The Cheese": {
+    features: [
+          {
+                "title": "SUPER CASCADES",
+                "description": "Any time a winning combination occurs, all regular paying symbols of the winning type are also removed from the grid."
+          },
+          {
+                "title": "CHEESE SYMBOL",
+                "description": "When a cheese symbol is part of a winning cluster, all symbols except FS and Wild Multipliers are removed from the grid."
+          },
+          {
+                "title": "JUMPING WILD MULTIPLIERS",
+                "description": "Wild Multipliers jump to a new position after each cascade. Normal Jumping Wild Multipliers: start at 1x, increase by +1x every jump. Epic Jumping Wild Multipliers: start at 10x, increase by +10x every jump. Maximum 4 on grid at once."
+          },
+          {
+                "title": "FROMAGE FRENZY BONUS FEATURE",
+                "description": "Activate with 8 free spins by landing at least 3 FS scatter symbols. Start with 2 persistent Jumping Wild Multipliers. Features a Cheese Meter that fills as Cheese symbols are collected; when full, upgrades to TAKE IT CHEESY bonus with 5 additional spins."
+          },
+          {
+                "title": "TAKE IT CHEESY BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing at least 4 FS scatter symbols. Start with 3 persistent Jumping Wild Multipliers. Same Cheese Meter mechanic; upgrades to LIFE'S SO GOUDA with 5 additional spins."
+          },
+          {
+                "title": "LIFE'S SO GOUDA BONUS FEATURE",
+                "description": "Activate with 12 free spins by landing at least 5 FS scatter symbols. Start with 4 persistent Jumping Wild Multipliers (at least 1 guaranteed Epic). Wild Multipliers values do NOT reset between spins."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Jumping Wild Multiplier symbols substitute for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Cloud Princess": {
+    features: [
+          {
+                "title": "TOTAL WIN BAR",
+                "description": "All wins are collected in the Total Win Bar above the grid during each spin."
+          },
+          {
+                "title": "MULTIPLIER SYMBOLS",
+                "description": "Multiplier symbols activate at end of each spin if at least one win occurred. They add together, then the result multiplies the total win. Max value 10,000x. Normal Multiplier: lands with visible value, increases by +1 per cascade (initial: 2x-4x). Super Multiplier: lands with \"?\" revealed when activated, increases by +2 per cascade (initial: 5x-20x). Epic Multiplier: lands with revealed value, doubles per cascade (initial: 5x-100x)."
+          },
+          {
+                "title": "CLOUD SURGE BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing 3 FS scatter symbols. All wins collected as pending win amount above the reels, updated after each cascade. Landing multipliers applies their combined value to the total win at end of spin."
+          },
+          {
+                "title": "DIVINE BOOST BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing 4 FS scatter symbols. A progressive Divine Multiplier collects all multiplier values that are part of a win, then stores them in a Divine Multiplier portal. Each following winning spin with multipliers adds to the portal and applies the growing total to the win."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Le Pharaoh": {
+    features: [
+          {
+                "title": "STICKY RE-DROPS",
+                "description": "When a winning combination lands, the winning symbols stick and a re-drop is awarded. Sticky symbols create Golden Squares on their positions. Re-drops continue until no further extensions or new winning combinations are created."
+          },
+          {
+                "title": "GOLDEN RICHES",
+                "description": "If a Rainbow symbol is on the grid at the end of Sticky Re-drops, it activates Golden Riches. All Golden Squares reveal Bronze Coins (0.2x-4x), Silver Coins (5x-20x), Gold Coins (25x-500x), or special symbols. Green Clover multiplies adjacent Coins/Pot Of Gold (x2-x20). Golden Clover multiplies ALL Coins/Pot Of Gold on the grid (x2-x20). Pot Of Gold symbols collect all Coin values."
+          },
+          {
+                "title": "BONUS CHOICE",
+                "description": "Landing 3 or 4 FS scatter symbols brings you into the Bonus Choice menu. With 3 FS: choose LUCK OF THE PHARAOH or LOST TREASURES. With 4 FS: choose SUPER LUCK OF THE PHARAOH or SUPER LOST TREASURES."
+          },
+          {
+                "title": "LUCK OF THE PHARAOH",
+                "description": "10 free spins. Retains Sticky Re-drops and Golden Riches. All Golden Squares remain highlighted until end of feature."
+          },
+          {
+                "title": "SUPER LUCK OF THE PHARAOH",
+                "description": "Variant of LUCK OF THE PHARAOH with 12 free spins, better chances of higher-value Coins, and guarantees a Clover symbol whenever Golden Riches activates."
+          },
+          {
+                "title": "LOST TREASURES",
+                "description": "3 refilling lives. Only dead symbols, Coins, Clovers, Pot Of Gold, and Stone Tablet symbols appear. Adding Stone Tablet adds value to one random Coin each spin (1x-500x). Multiplying Stone Tablet multiplies one random Coin (x2-x20). At end, all Coin and Pot Of Gold values are added and multiplied by bet."
+          },
+          {
+                "title": "SUPER LOST TREASURES",
+                "description": "Variant of LOST TREASURES with guaranteed Adding Stone Tablet on first spin and better chances of higher-value Coins."
+          },
+          {
+                "title": "RAINBOW OVER THE PYRAMIDS",
+                "description": "Landing 5 FS scatter symbols awards this Epic Bonus with 12 free spins. Retains Sticky Re-drops and Golden Riches with all Golden Squares highlighted throughout. A Rainbow symbol is guaranteed to land on every spin."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Evil Eyes": {
+    features: [
+          {
+                "title": "THE EVIL EYE AND THE EVIL SPREAD MECHANIC",
+                "description": "If the Evil Eye symbol lands under a winning symbol, it activates the Evil Spread mechanic. The Evil Eye marks all winning symbols, then rotates to face right or down. The Evil Spread extends the win to the edge of the grid in that direction by replacing all symbols in the path. If the direction is right, there is a chance it also activates downward. Evil Eye can only land on reel 3, row 2-5."
+          },
+          {
+                "title": "WICKED NIGHT BONUS FEATURE",
+                "description": "Activate with 3 refilling lives by landing at least 3 FS scatter symbols. Only non-paying symbols, Evil Eye symbols and multiplier scatter symbols appear. Evil Eye glances and collects all multipliers that cross its gaze, adding values to the reel multiplier above that reel. If the gaze crosses another Evil Eye, a multiplier is added to ALL reel multipliers. Adding multipliers: 1x-100x. Multiplying multipliers: x2-x10. At end, all reel multipliers are added together and multiplied by bet."
+          },
+          {
+                "title": "THE GRAVEYARD BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing at least 4 FS scatter symbols. Low symbols that have been part of a win spread by Evil Spread will not reappear in future spins."
+          },
+          {
+                "title": "WICKED EPIC DROP",
+                "description": "May randomly activate at the start of any base game spin. Transforms into the Wicked Night bonus for just one spin - at least 3 Evil Eye symbols and 4 multipliers guaranteed, with at least one multiplier always collected."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "FS symbols can only land on reels 2-5 in the base game."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Octo Attack": {
+    features: [
+          {
+                "title": "WILD SYMBOLS AND WILD MULTIPLIER SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable. Wild symbols can also land with one of the following adding multiplier values: 1x-10x."
+          },
+          {
+                "title": "INK STAINS",
+                "description": "When there is a win, winning positions are marked with Ink Stains. Ink Stains are removed from the grid after being used by the Tenta-Grab mechanic, and reset between spins."
+          },
+          {
+                "title": "EYE OF OTTO AND THE TENTA-GRAB MECHANIC",
+                "description": "The Eye of Otto symbol activates the Tenta-Grab mechanic when it lands on a grid with Ink Stains. The Tenta-Grab randomly grabs one symbol on the grid and replaces all Ink Stained positions and itself with the grabbed symbol. If a Wild or Wild Multiplier is grabbed, there is a chance the replaced symbols become Wild Multipliers."
+          },
+          {
+                "title": "EIGHTH ARM IS THE CHARM BONUS FEATURE",
+                "description": "Activate with free spins equal to the number of FS scatter symbols landed (min 3). Ink Stains are not removed between spins until grabbed by the Tenta-Grab mechanic. Landing additional FS symbols awards extra free spins (1 extra spin per 3 FS symbols)."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Donny Dough": {
+    features: [
+          {
+                "title": "LOOTLINES",
+                "description": "When there is a winning payline of Multi-Dough symbols, the payout is determined by combining their values left to right. Adding Multi-Dough: 1x-10x. Revealing Adding Multi-Dough: 15x-500x. Multiplying Multi-Dough: x2-x5. Revealing Multiplying Multi-Dough: x6-x25. Multiplying multipliers that come first on a payline are treated as adding. The resulting value is multiplied by your bet."
+          },
+          {
+                "title": "STICKY DOUGH BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing 3 FS scatter symbols. All Multi-Dough symbols are sticky until they are part of a winning payline, then removed on the next spin."
+          },
+          {
+                "title": "STRIKE GOLD BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing 4 FS scatter symbols. When Multi-Dough symbols form a winning payline, a light bulb is lit above each reel that contributed. When a Donny's Hat symbol lands, a re-spin is triggered and Multi-Dough symbols equal to the lit light bulbs appear on those reels. Donny's Hat guaranteed on the last spin."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Dragons Domain": {
+    features: [
+          {
+                "title": "CHARRED LAND",
+                "description": "Charred Land symbols are Wild multipliers with 3 charges. After being part of a win, they lose a charge before the next cascade. Each cascade increases the multiplier by 1. If multiple Charred Land symbols are part of a win, their values are added together. Possible initial multiplier values: 2x, 3x, 4x, 5x, 10x."
+          },
+          {
+                "title": "DRAGON SYMBOLS AND DRAGONFIRE",
+                "description": "Dragon symbols activate once the grid is settled with no more wins, breathing Dragonfire in a cross-pattern from their position. Dragonfire removes regular paying symbols and refills charges on Charred Land symbols. Gold Dragon symbols have a multiplier (x2-x10); when Dragonfire from a Gold Dragon hits a Charred Land symbol, its multiplier is multiplied by the Gold Dragon's value."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "Charred Land symbols substitute for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [
+          {
+                "title": "DRAGON'S LAIR BONUS GAME",
+                "description": "Land 3 FS scatter symbols to activate with 10 free spins. All Charred Land multipliers are persistent between free spins as long as they have charges left."
+          },
+          {
+                "title": "THE HATCHERY BONUS GAME",
+                "description": "Land 4 FS scatter symbols to activate with 10 free spins. Only non-paying symbols, Dragon Eggs, and Dragon symbols appear. Dragon Eggs are cash prizes collected when hit by Dragonfire. Green Eggs: 1-10x bet. Red Eggs: 20-40x bet. Golden Eggs: 50-200x bet. Gold Dragon multiplies egg values."
+          }
+    ],
+  },
+  "Sixsixsix": {
+    features: [
+          {
+                "title": "WICKED WHEELS",
+                "description": "Activate Blue or Red Wicked Wheels by landing the Blue or Red 6 symbol on the grid (reels 1, 3, 5 only). Once activated, the Wicked Wheel spins and awards the value at the arrow. Blue Wicked Wheel values: Max win, Adding multipliers (5x-100x), Multiplying multipliers (x2-x10), or FS trigger. Red Wicked Wheel values: Max win, Adding multipliers (10x-500x), Multiplying multipliers (x3-x20). Only Blue Wicked Wheels appear in the base game."
+          },
+          {
+                "title": "SPEAK OF THE DEVIL BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing one 6 symbol on a Wicked Wheel in the base game. Increased chance of landing Red and Blue Wicked Wheels."
+          },
+          {
+                "title": "LET HELL BREAK LOOSE! BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing a 6 symbol on two Wicked Wheels simultaneously. Increased chance of landing Red Wicked Wheels; Blue Wicked Wheels do not appear."
+          },
+          {
+                "title": "WHAT THE HELL BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing a 6 symbol on three Wicked Wheels simultaneously. A Red Wicked Wheel is guaranteed on every spin. Cannot be purchased."
+          },
+          {
+                "title": "DEAL WITH THE DEVIL",
+                "description": "When SPEAK OF THE DEVIL or LET HELL BREAK LOOSE! bonuses are triggered, players may Deal with the Devil. The Deal Wheel can award 5, 8, 12, 16, 20 free spins or a 6 symbol to upgrade to a higher bonus. SPEAK OF THE DEVIL can upgrade to LET HELL BREAK LOOSE; that can upgrade to WHAT THE HELL. May deal once per bonus level."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Tai The Toad": {
+    features: [
+          {
+                "title": "THE TOAD AND THE POT",
+                "description": "The Toad symbol reveals either a Wild symbol or Gold Coins symbol when activated by the Prosperity Pot symbol. All Toad symbols reveal the same type. Gold Coins (1-1000x bet) are cash prizes added together and multiplied by bet. Coin Bag symbols reveal a multiplier (x2-x5) and multiply 1-5 Gold Coins symbols with that value."
+          },
+          {
+                "title": "TOAD BONUS",
+                "description": "Land 3 FS scatter symbols to trigger with 10 free spins. Land Dragon (adds 1-5 Toad Points to reel) and Double Dragon (adds 1-5 Toad Points to all reels) symbols. When Prosperity Pot lands, Toad symbols fill random positions on corresponding reels. Toad Points reset after each Prosperity Pot. Filling all Toad Points meters awards 10 additional spins."
+          },
+          {
+                "title": "GOLDEN TOAD BONUS",
+                "description": "Land 4 FS scatter symbols to trigger with 10 free spins. Same mechanics as Toad Bonus but with progressive Toad Points that do not reset after each Prosperity Pot activation."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Twisted Lab": {
+    features: [
+          {
+                "title": "ROTOGRID",
+                "description": "The RotoGrid symbol can land with 1-4 charges, each causing the grid to rotate 90 degrees clockwise. Wins from the initial drop are calculated before RotoGrid activates."
+          },
+          {
+                "title": "OOZING BEAKERS",
+                "description": "When the grid rotates, Oozing Beakers break and spill Ooze to the bottom of the reel. All Ooze-covered positions become Wild symbols. Purple Ooze: no multiplier. Blue Ooze: adding multipliers (2x-100x). Pink Ooze: multiplying multipliers (x2-x10). When Blue and Pink Ooze combine, the result is Green Ooze with a multiplying multiplier."
+          },
+          {
+                "title": "UNLEASH THE OOZE! BONUS FEATURE",
+                "description": "Activate with 10 free spins by landing 3 FS scatter symbols. Increased chance of landing RotoGrid symbols, FS symbols and Oozing Beakers."
+          },
+          {
+                "title": "THE TWIST OF THE TWISTED! BONUS FEATURE",
+                "description": "3 refilling lives. Only Blue Twisters, Pink Twisters, Collect symbols, RotoGrid symbols and non-paying symbols appear. Each Twister has four rotating multiplier values; the top value is active. Blue Twisters rotate with the grid. Pink Twisters rotate on every spin plus with the grid. Collect symbols activate and gather all current Twister values. At end, all Twister values and collected amounts are added together and multiplied by bet."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "In THE TWIST OF THE TWISTED! bonus, RotoGrid symbols can land on all reels."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Ze Zeus": {
+    features: [
+          {
+                "title": "SUPER CASCADES",
+                "description": "Any time a winning combination occurs, all regular paying symbols of the winning type are also removed from the grid."
+          },
+          {
+                "title": "WIN TO WIN",
+                "description": "After a winning combination, the squares behind winning symbols become highlighted as Divine Squares. The Hand of Zeus symbol activates Divine Squares after all wins, revealing Bronze, Silver, or Gold Coins and possibly Vessel of Wealth or Zap of Zeus symbols. Zap of Zeus multiplies adjacent Coins. Vessel of Wealth collects all Coin values. After the last Vessel activates, all remaining Divine Squares reveal again."
+          },
+          {
+                "title": "WHAT IF ZEUS WAS ONE OF US?",
+                "description": "Activate with free spins by landing 3 FS scatter symbols. Divine Squares remain highlighted between spins until activated. Landing 4 FS upgrades to ZE ZEUS TAKE THE WHEEL."
+          },
+          {
+                "title": "ZE ZEUS TAKE THE WHEEL",
+                "description": "Activate with free spins by landing 4 FS scatter symbols. All Divine Squares remain highlighted throughout the whole bonus, even after being activated."
+          },
+          {
+                "title": "ZE ZEUS MIGHT SUPERSTAR",
+                "description": "Activate with free spins by landing 5 FS scatter symbols. All Divine Squares remain highlighted, Hand of Zeus guaranteed on every spin, and Bronze Coins do not appear."
+          },
+          {
+                "title": "SPECIAL SYMBOLS",
+                "description": "The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Cursed Crypt": {
+    features: [
+          {
+                "title": "CURSED REELS",
+                "description": "When the Curse symbol lands, it spreads the Curse upwards to the top of the reel and creates Cursed Positions. The Cursed Positions will be replaced with a random symbol."
+          },
+          {
+                "title": "WRATH OF SOBEK",
+                "description": "Activate this bonus feature with 10 free spins by landing 3 FS scatter symbols at the same time during the base game. Throughout this bonus, there is an increased chance of landing Curse symbols! Landing additional FS symbols at the same time during the feature awards additional free spins: 2 FS symbols award 2 extra spins; 3 FS symbols award 4 extra spins."
+          },
+          {
+                "title": "TOMB OF TUTANKHAMUN",
+                "description": "Activate this bonus feature with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. In this bonus game, the Curse symbol can only fill the Cursed Positions with high-paying symbols or Wild symbols. Landing additional FS symbols at the same time during the feature awards additional free spins: 2 FS symbols award 2 extra spins; 3 FS symbols award 4 extra spins. The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Slayers Inc": {
+    features: [
+          {
+                "title": "SLAYER DUELREELSâ_x0084_¢",
+                "description": "A landed VS symbol will expand if it will form part of a win once expanded. Once triggered, it will expand to cover the entire reel and display two slayers with different multipliers. A duel will take place, and the surviving slayer's multiplier will be applied across the entire reel. At this point the entire reel also turns Wild. If more than one duel is part of the same win the values will first be added and then multiplied with the line wins. The possible multiplier values are 2x, 3x, 4x, 5x, 6x, 7x, 8x, 9x, 10x, 15x, 20x, 25x, 50x, 100x, 250x, 500xâ_x0080__x008b_â_x0080__x008b_. If you land one VS symbol on each reel so that the whole grid is covered, the grid will be treated as entirely Wild. Each reel can land only one VS symbol at once."
+          },
+          {
+                "title": "RISE OF THE SYNDICATE",
+                "description": "Land 3 FS scatter symbols at the same time in the base game to activate the RISE OF THE SYNDICATE bonus feature with 10 free spins! In this bonus feature there is a higher chance of landing a VS symbol! Landing additional FS symbols at the same time during the feature awards additional free spins: 2 FS symbols award 2 extra spins; 3 FS symbols award 4 extra spins."
+          },
+          {
+                "title": "WILD SLAYERS",
+                "description": "Land 4 FS scatter symbols at the same time in the base game to activate the WILD SLAYERS bonus feature with 10 free spins! This bonus maintains the mechanics of the base game. On top of that, there is a chance to activate the Slicer mechanic whenever a VS symbol lands. The Slicer mechanic will add a full row of Wild symbols on a randomly selected row on the grid. Landing additional FS symbols at the same time during the feature awards additional free spins: 2 FS symbols award 2 extra spins. 3 FS symbols award 4 extra spins."
+          },
+          {
+                "title": "ONE SLAYER TO SLAY THEM ALL",
+                "description": "Land 5 FS scatter symbols at the same time in the base game to activate the ONE SLAYER TO SLAY THEM ALL bonus feature with 10 free spins! This bonus feature maintains the mechanics of the WILD SLAYERS bonus. On top of that, the Slayer DuelReelsâ_x0084_¢ mechanic and the Slicer mechanic are guaranteed to activate on every spin!"
+          },
+          {
+                "title": "BEST OF BONUS",
+                "description": "Land the Best of Bonus scatter symbol at the same time as the required amount of FS scatter symbols in the base game to trigger the Best of Bonus versions of the bonus features: Land 3 FS symbols and a Best of Bonus symbol to trigger BEST OF RISE OF THE SYNDICATE; Land 4 FS symbols and a Best of Bonus symbol to trigger BEST OF WILD SLAYERS; Land 5 FS symbols and a Best of Bonus symbol to trigger BEST OF ONE SLAYER TO SLAY THEM ALL. In the Best of Bonus versions of the bonus features, three rounds of the bonus feature is played out in a row. The resulting win from each round is stored on the scoreboard outside the grid. At the end of the third and final round, the highest value from the scoreboard is awarded to the player. The Wild symbol substitutes for all symbols in the paytable. The Best of Bonus symbol can only appear in the base game. FS symbols do not appear in the ONE SLAYER TO SLAY THEM ALL bonus feature."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Jelly Slice": {
+    features: [
+          {
+                "title": "SLICER MECHANIC",
+                "description": "During the game, there is a chance to activate 1 Slicer per reel before the drop starts. The Slicer will slice all symbols that pass through it into 2, 3 or 4 pieces, depending on the Slicer value. Each sliced symbol piece counts as one symbol towards any potential wins."
+          },
+          {
+                "title": "RAZOR-SHARP BONUS",
+                "description": "Land 5-20 FS scatter symbols during the base game to activate the RAZOR-SHARP bonus game. Each landed FS symbol corresponds to one awarded free spin in the bonus game. During the bonus game there is an increased chance to activate Slicers. Landing an additional FS symbol during the feature awards additional free spins. The number of free spins awarded is determined by the number of FS symbols that are present on the grid after the landed FS symbol has, or has not, been sliced: 1 FS symbols awards 1 extra spin; 2 FS symbols awards 2 extra spins; 3 FS symbols awards 3 extra spins; 4 FS symbols awards 4 extra spins. The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Keep Em": {
+    features: [
+          {
+                "title": "CASH'EM",
+                "description": "Cash symbols award a prize when collected! Cash symbols can display a value from one of the following: 1x, 2x, 3x, 4x, 5x, 10x, 25x, 50x, 100x, 250x, 500x, 1000x."
+          },
+          {
+                "title": "GET'EM",
+                "description": "Cash symbols are collected if a GET 'EM scatter symbol appears at the same time as at least one Cash symbol. If more than one GET'EM symbol lands on the grid, each one will collect all the Cash symbols on the grid once. The collected Cash prizes are added together and displayed in the Total Win bar. At the end of the round, the Total Win is multiplied by your bet to form the final win."
+          },
+          {
+                "title": "KEEP'EM",
+                "description": "Reels 3 and 4 on the grid are the KEEP'EM reels. When a GET'EM symbol, FS symbol and/or a Cash prize lands on either of the KEEP'EM reels, the KEEP'EM reels will be activated and 3 re-spins will be awarded. The remaining re-spins are displayed in the Heart Counter. The symbol that activated the KEEP'EM reels will stay on the grid until the end of the last re-spin. Additional GET'EM symbols, FS symbols and/or Cash prizes that land during the re-spins will also become locked and stay on the grid until the end of the last re-spin. Cash prizes and GET'EM symbols will activate on every new re-spin. Throughout the 3 re-spins, there is a chance to land the Heart symbol, which will award enough additional re-spins to completely fill the Heart Counter."
+          },
+          {
+                "title": "KEEP'EM COMIN' BONUS FEATURE",
+                "description": "Activate this bonus feature with 10 free spins by landing 3 FS scatter symbols at the same time during the base game. Throughout this bonus, there is an increased chance of landing GET'EM symbols, FS symbols and Cash prizes! Landing additional FS symbols at the same time during the feature awards additional free spins: 3 FS symbols award 4 extra spins. 4 FS symbols award 6 extra spins."
+          },
+          {
+                "title": "KEEP YOUR FRIENDS CLOSEâ_x0080_¦ BONUS FEATURE",
+                "description": "Activate this bonus feature with 10 free spins by landing 4 FS scatter symbols at the same time during the base game. In this bonus game, landed Cash prizes stay on the grid until they are collected by a GET'EM symbol. Both the collected Cash prizes and the GET'EM symbol will spin out at the start of the next spin. Whenever there is a full row or a full reel of Cash prizes on the grid, the row or reel will automatically collect, even if there is no GET'EM symbol on the grid, and spin out at the start of the next spin. If there are one or more GET'EM symbols on the grid, they will also collect the Cash prizes separately. Landing additional FS symbols at the same time during the feature awards additional free spins: 3 FS symbols award 4 extra spins. 4 FS symbols award 6 extra spins."
+          },
+          {
+                "title": "KEEP YOUR CANNY CLOSER! BONUS FEATURE",
+                "description": "Activate this bonus feature with 10 free spins by landing 5 FS scatter symbols at the same time during the base game. The mechanics of this bonus game are identical to the KEEP YOUR FRIENDS CLOSEâ_x0080_¦ bonus. On top of that, 3 Cash prizes and 1 GET'EM symbol are guaranteed to land on every spin."
+          }
+    ],
+    bonus_games: [],
+  },
+  "Divine Drop": {
+    features: [
+          {
+                "title": "WILD MULTIPLIER",
+                "description": "The Wild Multiplier symbol substitutes for all other symbols in the paytable and multiplies the value of any winning combination that it is part of. Wild Multipliers can land with one of the following values: 2x, 3x, 4x, 5x, 6x, 7x, 8x, 9x, 10x, 25x, 50x, 100x, 200x If more than one Wild Multiplier is part of the same winning combination, their values are added together before being applied to the win. Wild Multipliers may land with up to 3 Vitality, shown on the symbol as red hearts. While a Wild Multiplier has Vitality remaining, it stays sticky on the grid and awards respins. For each respin awarded, 1 Vitality is removed from every Wild Multiplier on the grid. When a Wild Multiplier reaches 0 Vitality, it will be removed on the next spin or in the paytable."
+          },
+          {
+                "title": "APHRODITE'S LOVE",
+                "description": "When the Heart symbol lands it triggers Aphrodite's Love and restores 1 - 3 Vitality to all Wild Multipliers on the grid."
+          },
+          {
+                "title": "ZEUS'S THUNDER",
+                "description": "When the X symbol lands it activates Zeus's Thunder and calls down a bolt of lightning that doubles the multiplier value of all Wild Multipliers on the grid!"
+          },
+          {
+                "title": "FS COLLECT",
+                "description": "Land 3 or 4 FS scatter symbols at the same time during the base game to trigger one of the bonus games. You can also trigger one of the bonuses by collecting FS symbols during respins. If only 1 or 2 FS symbols land on a spin they are collected in the Bonus Meter above the reels if there is at least one Wild Multiplier with 1 or more Vitality. Once the Bonus Meter reaches 3 or 4 collected FS symbols, it will trigger the corresponding bonus game at the end of the round (after any potential respins have been awarded)."
+          },
+          {
+                "title": "TRICKS OF HADES",
+                "description": "Land or collect 3 FS symbols during the base game to activate the TRICKS OF HADES Bonus with 8 free spins. During the bonus there is an increased chance of landing Wild Multipliers and special symbols!"
+          },
+          {
+                "title": "TRIPLE TRICKS OF HADES",
+                "description": "Land or collect 4 FS symbols during the base game to activate the TRIPLE TRICKS OF HADES Bonus with 8 free spins. During the bonus there is an increased chance of landing Wild Multipliers and special symbols! Furthermore, the minimum value of the Wild Multipliers that land is 3x. The Wild symbol substitutes for all symbols in the paytable."
+          }
+    ],
+    bonus_games: [],
+  },
+};
+
 // Enrich each slot with provider info, URLs, and tags
 const SLOTS = RAW_SLOTS.map((s) => {
   if (s.pp) {
@@ -449,10 +2705,13 @@ const SLOTS = RAW_SLOTS.map((s) => {
   }
   // Hacksaw Gaming slot
   const hsData = HACKSAW_RTP[s.name] || {};
+  const hsFeat = HACKSAW_FEATURES[s.name] || {};
   return {
     ...s,
     rtp: hsData.rtp || s.rtp || null,
     volatility: hsData.volatility || s.volatility || null,
+    features: hsFeat.features || s.features || [],
+    bonus_games: hsFeat.bonus_games || s.bonus_games || [],
     provider_id: "hacksaw",
     provider_name: "Hacksaw Gaming",
     provider_website: "https://www.hacksawgaming.com",
