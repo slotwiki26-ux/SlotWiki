@@ -27,10 +27,11 @@
 </header>
 
 <main>
-  <!-- Featured Provider: Hacksaw Gaming -->
+
+  <!-- ── Hacksaw Gaming ─────────────────────────────────────── -->
   <section id="hacksaw" class="provider-hero">
     <div class="provider-hero-inner">
-      <div class="provider-logo-wrap" id="hacksaw-logo-wrap">
+      <div class="provider-logo-wrap">
         <span style="font-size:36px">🎮</span>
       </div>
       <div class="provider-info">
@@ -44,22 +45,52 @@
     </div>
   </section>
 
-  <div class="page-content">
-    <!-- Search for Hacksaw slots -->
+  <div class="page-content" style="padding-bottom:0">
     <div class="search-wrap" style="max-width:480px; margin-bottom:24px;">
       <input id="hacksaw-search" class="search-input" type="search"
         placeholder="Search Hacksaw slots…" autocomplete="off">
       <span class="search-icon">🔍</span>
     </div>
-
     <div class="section-header">
       <h2 class="section-title">Hacksaw Gaming Slots</h2>
       <span class="section-count" id="hacksaw-count"></span>
     </div>
     <div class="slot-grid" id="hacksaw-grid"></div>
+  </div>
 
-    <!-- More Providers -->
-    <div style="margin-top: 56px;">
+  <!-- ── Pragmatic Play ─────────────────────────────────────── -->
+  <section id="pragmatic" class="provider-hero" style="margin-top:56px;">
+    <div class="provider-hero-inner">
+      <div class="provider-logo-wrap">
+        <span style="font-size:36px">🎯</span>
+      </div>
+      <div class="provider-info">
+        <h1 class="provider-name">Pragmatic Play</h1>
+        <div class="provider-score">⭐ 9.4 / 10</div>
+        <p class="provider-description" id="pragmatic-desc"></p>
+        <a href="https://www.pragmaticplay.com" class="btn-visit" target="_blank" rel="noopener noreferrer">
+          Visit pragmaticplay.com ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-content" style="padding-bottom:0">
+    <div class="search-wrap" style="max-width:480px; margin-bottom:24px;">
+      <input id="pragmatic-search" class="search-input" type="search"
+        placeholder="Search Pragmatic Play slots…" autocomplete="off">
+      <span class="search-icon">🔍</span>
+    </div>
+    <div class="section-header">
+      <h2 class="section-title">Pragmatic Play Slots</h2>
+      <span class="section-count" id="pragmatic-count"></span>
+    </div>
+    <div class="slot-grid" id="pragmatic-grid"></div>
+  </div>
+
+  <!-- ── More Providers ─────────────────────────────────────── -->
+  <div class="page-content">
+    <div style="margin-top: 40px;">
       <div class="section-header">
         <h2 class="section-title">More Providers</h2>
         <span style="font-size:13px; color:var(--text-muted);">Coming soon</span>
@@ -70,6 +101,7 @@
       <div class="providers-grid" id="more-providers-grid"></div>
     </div>
   </div>
+
 </main>
 
 <!-- Modal -->
@@ -98,30 +130,30 @@
 <script>
   initModal();
 
-  // Fill provider description
-  const provider = PROVIDERS.find(p => p.id === "hacksaw");
-  if (provider) {
-    document.getElementById("hacksaw-desc").textContent = provider.description;
-  }
+  // Provider descriptions from data
+  document.getElementById("hacksaw-desc").textContent = PROVIDERS.find(p => p.id === "hacksaw").description;
+  document.getElementById("pragmatic-desc").textContent = PROVIDERS.find(p => p.id === "pragmatic").description;
 
-  // Render Hacksaw slots
-  const hacksawSlots = getSlotsByProvider("hacksaw");
-  renderGrid(hacksawSlots, "hacksaw-grid", "hacksaw-count");
+  // Render grids
+  renderGrid(getSlotsByProvider("hacksaw"), "hacksaw-grid", "hacksaw-count");
+  renderGrid(getSlotsByProvider("pragmatic"), "pragmatic-grid", "pragmatic-count");
 
-  // Search within Hacksaw slots
-  const searchInput = document.getElementById("hacksaw-search");
-  let debounceTimer = null;
-  searchInput.addEventListener("input", () => {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-      const results = searchSlots(searchInput.value, "hacksaw");
-      renderGrid(results, "hacksaw-grid", "hacksaw-count");
-    }, 180);
+  // Search — Hacksaw
+  let hsTimer = null;
+  document.getElementById("hacksaw-search").addEventListener("input", function() {
+    clearTimeout(hsTimer);
+    hsTimer = setTimeout(() => renderGrid(searchSlots(this.value, "hacksaw"), "hacksaw-grid", "hacksaw-count"), 180);
   });
 
-  // Coming-soon providers grid
+  // Search — Pragmatic
+  let ppTimer = null;
+  document.getElementById("pragmatic-search").addEventListener("input", function() {
+    clearTimeout(ppTimer);
+    ppTimer = setTimeout(() => renderGrid(searchSlots(this.value, "pragmatic"), "pragmatic-grid", "pragmatic-count"), 180);
+  });
+
+  // Coming-soon providers
   const comingSoon = [
-    { name: "Pragmatic Play", icon: "🃏", count: "200+" },
     { name: "Play'n GO", icon: "🃏", count: "200+" },
     { name: "NetEnt", icon: "🎲", count: "300+" },
     { name: "Big Time Gaming", icon: "⚡", count: "50+" },
@@ -130,7 +162,6 @@
     { name: "Relax Gaming", icon: "🎯", count: "100+" },
     { name: "Thunderkick", icon: "⚡", count: "30+" },
   ];
-
   document.getElementById("more-providers-grid").innerHTML = comingSoon.map(p => `
     <div class="provider-card">
       <div class="provider-card-logo">${p.icon}</div>

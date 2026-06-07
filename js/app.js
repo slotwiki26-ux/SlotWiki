@@ -8,7 +8,7 @@ function slotCardHTML(slot) {
 
   const rtpBadge = slot.rtp
     ? `<span class="rtp-badge">RTP ${slot.rtp}</span>`
-    : `<span class="rtp-badge unknown">RTP N/A</span>`;
+    : ``;
 
   const maxWin = slot.max_win
     ? `<span class="max-win-badge">${slot.max_win}</span>`
@@ -72,8 +72,8 @@ function openModal(slug) {
     : `<div class="modal-hero-placeholder">🎰</div>`;
 
   const stats = [
-    { label: "RTP", value: slot.rtp || "N/A", na: !slot.rtp },
-    { label: "Max Win", value: slot.max_win || "N/A", na: !slot.max_win },
+    slot.rtp ? { label: "RTP", value: slot.rtp } : null,
+    slot.max_win ? { label: "Max Win", value: slot.max_win } : null,
     slot.volatility ? { label: "Volatility", value: slot.volatility } : null,
     slot.release_date ? { label: "Released", value: slot.release_date } : null,
   ]
