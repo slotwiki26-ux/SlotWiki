@@ -714,6 +714,15 @@ img { display: block; max-width: 100%; }
   filter: blur(48px);
 }
 
+/* Push Gaming — orange/red smoke */
+.pick-pushgaming::before {
+  background: radial-gradient(ellipse at 50% 60%,
+    rgba(255, 100, 30, 0.60) 0%,
+    rgba(220,  55,  0, 0.30) 35%,
+    transparent 70%);
+  filter: blur(48px);
+}
+
 /* Pragmatic — gold/amber smoke */
 .pick-pragmatic::before {
   background: radial-gradient(ellipse at 50% 60%,
@@ -748,6 +757,11 @@ img { display: block; max-width: 100%; }
 .pick-pragmatic:hover {
   border-color: rgba(245, 195, 66, 0.6);
   box-shadow: 0 16px 60px rgba(245, 195, 66, 0.20), 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.pick-pushgaming:hover {
+  border-color: rgba(255, 100, 30, 0.6);
+  box-shadow: 0 16px 60px rgba(255, 100, 30, 0.25), 0 4px 20px rgba(0,0,0,0.6);
 }
 
 .pick-content {
@@ -825,6 +839,7 @@ img { display: block; max-width: 100%; }
 
 .pick-hacksaw .pick-cta { border-color: rgba(56,130,255,0.35); color: rgba(120,170,255,0.9); }
 .pick-pragmatic .pick-cta { border-color: rgba(245,195,66,0.35); color: rgba(245,195,66,0.9); }
+.pick-pushgaming .pick-cta { border-color: rgba(255,100,30,0.35); color: rgba(255,130,60,0.9); }
 
 /* Provider games section */
 .provider-games-section {
@@ -880,6 +895,11 @@ img { display: block; max-width: 100%; }
 
 .pragmatic-hero {
   background: linear-gradient(160deg, rgba(245,195,66,0.12) 0%, rgba(245,195,66,0.04) 40%, transparent 70%);
+}
+
+/* Push Gaming — orange/red */
+.pushgaming-hero {
+  background: linear-gradient(160deg, rgba(255,100,30,0.12) 0%, rgba(255,60,10,0.04) 40%, transparent 70%);
 }
 
 .provider-page-hero-inner {

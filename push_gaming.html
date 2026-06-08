@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Push Gaming — Slot Wiki</title>
+  <meta name="description" content="Browse all Push Gaming slots on Slot Wiki. RTP values, volatility, features, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🎰</div>
+      Slot<span>Wiki</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="providers.html" class="active">Providers</a>
+      <a href="terms.html">Responsible Gambling</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Provider Hero -->
+<section class="provider-page-hero pushgaming-hero">
+  <div class="provider-page-hero-inner">
+    <a href="providers.html" class="provider-back">← All Providers</a>
+    <div class="provider-page-identity">
+      <div class="provider-page-icon">🚀</div>
+      <div>
+        <h1 class="provider-page-name">Push Gaming</h1>
+        <div class="provider-score">⭐ 9.3 / 10</div>
+      </div>
+    </div>
+    <p class="provider-page-desc" id="pushgaming-desc"></p>
+    <div class="provider-page-actions">
+      <a href="https://www.pushgaming.com" class="btn-visit" target="_blank" rel="noopener noreferrer">Visit pushgaming.com ↗</a>
+      <span class="provider-page-count" id="pushgaming-count"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Slot Grid -->
+<main class="page-content">
+  <div class="section-header" style="margin-bottom:20px;">
+    <div class="search-wrap" style="max-width:440px; margin:0;">
+      <input id="pushgaming-search" class="search-input" type="search"
+        placeholder="Search Push Gaming slots…" autocomplete="off"
+        style="padding:10px 44px 10px 18px; font-size:14px;">
+      <span class="search-icon" style="font-size:15px;">🔍</span>
+    </div>
+    <span class="section-count" id="pushgaming-grid-count"></span>
+  </div>
+  <div class="slot-grid" id="pushgaming-grid"></div>
+</main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="modal"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Slot Wiki. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="providers.html">Providers</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <p class="footer-disclaimer">
+      Slot Wiki is an independent, informational resource. We do not offer gambling services, accept deposits, or facilitate wagering of any kind.
+      Gambling can be addictive — if you need help, visit <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a>
+      or call <strong>0808 8020 133</strong>.
+    </p>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+  initModal();
+
+  const provider = PROVIDERS.find(p => p.id === "pushgaming");
+  document.getElementById("pushgaming-desc").textContent = provider.description;
+
+  const slots = getSlotsByProvider("pushgaming");
+  renderGrid(slots, "pushgaming-grid", "pushgaming-grid-count");
+  document.getElementById("pushgaming-count").textContent = slots.length + " slots";
+
+  let timer = null;
+  document.getElementById("pushgaming-search").addEventListener("input", function () {
+    clearTimeout(timer);
+    timer = setTimeout(() => renderGrid(searchSlots(this.value, "pushgaming"), "pushgaming-grid", "pushgaming-grid-count"), 180);
+  });
+</script>
+</body>
+</html>
