@@ -43,6 +43,16 @@
     <span class="search-icon">🔍</span>
   </div>
   <p class="search-hint">Searches names, descriptions, and theme tags.</p>
+
+  <div class="compare-hint">
+    <span class="compare-hint-text">
+      <span class="compare-hint-icon">⊕</span>
+      Compare slots side-by-side — tap the <strong>+</strong> button on any card to add up to 3 slots
+    </span>
+    <button class="compare-hint-btn" id="hero-compare-btn" onclick="handleHeroCompare()">
+      Compare Slots
+    </button>
+  </div>
 </section>
 
 <!-- Provider Filter -->
@@ -103,6 +113,25 @@
 <script>
   initModal();
   initSearchDropdown('search-input');
+
+  function handleHeroCompare() {
+    if (compareList.length >= 2) {
+      openCompareModal();
+    } else {
+      // Scroll to grid and pulse the compare buttons on cards
+      document.getElementById('all-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        document.querySelectorAll('.card-compare-btn').forEach(btn => {
+          btn.style.opacity = '1';
+          btn.classList.add('pulse-hint');
+          setTimeout(() => {
+            btn.style.opacity = '';
+            btn.classList.remove('pulse-hint');
+          }, 1800);
+        });
+      }, 600);
+    }
+  }
 
   const PAGE_SIZE = 20; // 4 rows × 5 cols
   let allSlotsPool = [];
