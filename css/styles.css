@@ -986,6 +986,28 @@ img { display: block; max-width: 100%; }
 
 .btn-visit:hover { border-color: var(--accent); color: var(--accent); }
 
+/* ===== Explore More Button ===== */
+.explore-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  letter-spacing: 0.3px;
+}
+.explore-more-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
 /* ===== More Providers ===== */
 .providers-grid {
   display: grid;

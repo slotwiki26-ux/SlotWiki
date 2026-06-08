@@ -2994,8 +2994,8 @@ function searchSlots(query, providerFilter = null) {
   return results.filter((s) => s._searchIndex.includes(q));
 }
 
-function getFeaturedSlots() {
-  return SLOTS.filter((s) => s.featured);
+function getFeaturedSlots(limit = 4) {
+  return SLOTS.filter((s) => s.featured).slice(0, limit);
 }
 
 function getSlotsByProvider(providerId) {

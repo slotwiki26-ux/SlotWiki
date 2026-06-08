@@ -68,6 +68,9 @@
       <span class="section-count" id="all-count"></span>
     </div>
     <div class="slot-grid" id="all-grid"></div>
+    <div id="explore-more-wrap" style="text-align:center; margin-top:36px;">
+      <button id="explore-more-btn" class="explore-more-btn">Explore More ↓</button>
+    </div>
   </div>
 </main>
 
@@ -99,24 +102,44 @@
 <script>
   initModal();
 
-  // Render featured slots
+  const PAGE_SIZE = 20; // 4 rows × 5 cols
+  let allSlotsPool = SLOTS.filter(s => !s.featured);
+  let expanded = false;
+
+  function renderAllGrid(slots) {
+    const shown = expanded ? slots : slots.slice(0, PAGE_SIZE);
+    renderGrid(shown, "all-grid", "all-count");
+    const btn = document.getElementById("explore-more-btn");
+    const wrap = document.getElementById("explore-more-wrap");
+    if (slots.length <= PAGE_SIZE) {
+      wrap.style.display = "none";
+    } else {
+      wrap.style.display = "";
+      btn.textContent = expanded ? "Show Less ↑" : "Explore More ↓";
+    }
+  }
+
+  // Render featured slots (capped at 4)
   renderGrid(getFeaturedSlots(), "featured-grid", "featured-count");
 
-  // Render all slots (non-featured, below the fold)
-  const nonFeatured = SLOTS.filter(s => !s.featured);
-  renderGrid(nonFeatured, "all-grid", "all-count");
+  // Render all slots — first 20 only
+  renderAllGrid(allSlotsPool);
+
+  document.getElementById("explore-more-btn").addEventListener("click", () => {
+    expanded = !expanded;
+    renderAllGrid(allSlotsPool);
+    if (!expanded) document.getElementById("all-label").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 
   // Search overrides both grids
   const searchInput = document.getElementById("search-input");
   const featuredHeader = document.getElementById("featured-header");
-  const featuredSection = document.querySelector("[id=featured-grid]").parentElement;
 
   let debounceTimer = null;
   let activeProvider = null;
 
   function updateResults() {
     const q = searchInput.value.trim();
-    const chips = document.querySelectorAll("#provider-chips .chip");
 
     if (q || activeProvider) {
       // Hide featured, show unified search results
@@ -125,13 +148,16 @@
       document.getElementById("all-label").textContent = q ? `Results for "${q}"` : "All Slots";
       const results = searchSlots(q, activeProvider);
       renderGrid(results, "all-grid", "all-count");
+      document.getElementById("explore-more-wrap").style.display = "none";
     } else {
       // Restore default view
+      expanded = false;
       featuredHeader.style.display = "";
       document.getElementById("featured-grid").style.display = "";
       document.getElementById("all-label").textContent = "All Slots";
       renderGrid(getFeaturedSlots(), "featured-grid", "featured-count");
-      renderGrid(SLOTS.filter(s => !s.featured), "all-grid", "all-count");
+      allSlotsPool = SLOTS.filter(s => !s.featured);
+      renderAllGrid(allSlotsPool);
     }
   }
 
