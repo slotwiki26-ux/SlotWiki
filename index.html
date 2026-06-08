@@ -7,7 +7,7 @@
   <meta name="description" content="Slot Wiki is a free, informational encyclopedia of slot games. Browse RTP values, themes, features, and providers — no sign-up required.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -51,6 +51,7 @@
   <div id="provider-chips">
     <button class="chip" data-provider="hacksaw">Hacksaw Gaming</button>
     <button class="chip" data-provider="pragmatic">Pragmatic Play</button>
+    <button class="chip" data-provider="pushgaming">Push Gaming</button>
   </div>
 </div>
 
@@ -101,6 +102,7 @@
 <script src="js/app.js"></script>
 <script>
   initModal();
+  initSearchDropdown('search-input');
 
   const PAGE_SIZE = 20; // 4 rows × 5 cols
   let allSlotsPool = [];
