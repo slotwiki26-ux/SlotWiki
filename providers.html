@@ -7,8 +7,384 @@
   <meta name="description" content="Browse all slot game providers on Slot Wiki. View provider profiles, scores, and game libraries.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Russo+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+<style>
+/* ── Provider Arena Layout ───────────────────────────────────────────────── */
+.providers-page-hero {
+  text-align: center;
+  padding: 64px 24px 0;
+}
+.providers-page-hero h1 {
+  font-family: 'Russo One', sans-serif;
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.providers-page-hero p {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.providers-arena {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(16px, 3vw, 48px);
+  padding: 60px clamp(16px, 4vw, 60px) 100px;
+  min-height: 620px;
+  position: relative;
+}
+
+/* ── Card Base ───────────────────────────────────────────────────────────── */
+.pcard {
+  position: relative;
+  flex: 0 0 clamp(240px, 28vw, 340px);
+  border-radius: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+  isolation: isolate;
+}
+
+/* Scattered positions */
+.pcard-hacksaw   { transform: translateY(50px)  rotate(-2.5deg); }
+.pcard-pragmatic { transform: translateY(-10px) rotate(1.8deg);  }
+.pcard-pushgaming{ transform: translateY(70px)  rotate(-1.2deg); }
+
+/* Card inner box */
+.pcard-box {
+  position: relative;
+  z-index: 2;
+  background: var(--surface);
+  border-radius: 24px;
+  border: 1px solid transparent;
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  min-height: 420px;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  overflow: hidden;
+}
+
+/* Card inner background noise / depth */
+.pcard-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: radial-gradient(ellipse at 50% 110%, var(--card-glow) 0%, transparent 65%);
+  opacity: 0.18;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.pcard:hover .pcard-box::before { opacity: 0.55; }
+
+/* ── Rating Badge ────────────────────────────────────────────────────────── */
+.pcard-rating {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+}
+.pcard-score {
+  font-family: 'Russo One', sans-serif;
+  font-size: 22px;
+  color: var(--card-accent);
+  line-height: 1;
+  text-shadow: 0 0 12px var(--card-glow);
+  transition: text-shadow 0.3s ease;
+}
+.pcard:hover .pcard-score {
+  text-shadow: 0 0 20px var(--card-glow), 0 0 40px var(--card-glow);
+}
+.pcard-bars {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 18px;
+}
+.pcard-bar {
+  width: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.pcard-bar.lit {
+  background: var(--card-accent);
+  box-shadow: 0 0 5px var(--card-glow), 0 0 10px var(--card-glow);
+}
+/* Stepped heights for signal-bar look */
+.pcard-bar:nth-child(1)  { height: 6px;  }
+.pcard-bar:nth-child(2)  { height: 7px;  }
+.pcard-bar:nth-child(3)  { height: 8px;  }
+.pcard-bar:nth-child(4)  { height: 9px;  }
+.pcard-bar:nth-child(5)  { height: 10px; }
+.pcard-bar:nth-child(6)  { height: 11px; }
+.pcard-bar:nth-child(7)  { height: 13px; }
+.pcard-bar:nth-child(8)  { height: 15px; }
+.pcard-bar:nth-child(9)  { height: 17px; }
+.pcard-bar:nth-child(10) { height: 18px; }
+
+.pcard:hover .pcard-bar.lit {
+  box-shadow: 0 0 8px var(--card-glow), 0 0 18px var(--card-glow);
+}
+
+/* ── Logo ────────────────────────────────────────────────────────────────── */
+.pcard-logo-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.pcard-logo {
+  max-width: 180px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1) drop-shadow(0 2px 12px var(--card-glow));
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+.pcard:hover .pcard-logo {
+  filter: brightness(1.15) drop-shadow(0 4px 20px var(--card-glow));
+  transform: scale(1.05);
+}
+
+/* ── Provider Name ───────────────────────────────────────────────────────── */
+.pcard-name {
+  position: relative;
+  z-index: 2;
+  font-family: 'Russo One', sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 400;
+  color: var(--text);
+  text-align: center;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  transition: color 0.3s ease;
+}
+.pcard:hover .pcard-name { color: #fff; }
+
+/* ── Meta row ────────────────────────────────────────────────────────────── */
+.pcard-meta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pcard-slots {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 3px 12px;
+  border-radius: 50px;
+}
+
+/* ── CTA ─────────────────────────────────────────────────────────────────── */
+.pcard-cta {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: 1px solid var(--card-accent);
+  color: var(--card-accent);
+  background: transparent;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  text-transform: uppercase;
+}
+.pcard:hover .pcard-cta {
+  background: var(--card-accent);
+  color: #000;
+  box-shadow: 0 0 20px var(--card-glow), 0 0 40px var(--card-glow);
+}
+
+/* ── Ambient border glow ring ────────────────────────────────────────────── */
+.pcard-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 26px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: transparent;
+  border: 2px solid var(--card-accent);
+  box-shadow: 0 0 20px var(--card-glow), inset 0 0 20px var(--card-glow);
+}
+.pcard:hover .pcard-ring { opacity: 1; }
+
+/* ── Particle canvas layer ───────────────────────────────────────────────── */
+.pcard-fx {
+  position: absolute;
+  inset: -40px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 32px;
+  overflow: visible;
+}
+.pcard-fx canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Hover elevation ─────────────────────────────────────────────────────── */
+.pcard:hover {
+  z-index: 10;
+}
+.pcard-hacksaw:hover   { transform: translateY(30px)  rotate(-1deg) scale(1.04); }
+.pcard-pragmatic:hover { transform: translateY(-30px) rotate(0.5deg) scale(1.04); }
+.pcard-pushgaming:hover{ transform: translateY(50px)  rotate(-0.5deg) scale(1.04); }
+
+/* ── Per-provider theme vars ─────────────────────────────────────────────── */
+.pcard-hacksaw {
+  --card-accent: #4fa3ff;
+  --card-glow:   rgba(79, 163, 255, 0.6);
+}
+.pcard-hacksaw .pcard-box {
+  border-color: rgba(79, 163, 255, 0.15);
+}
+.pcard-hacksaw:hover .pcard-box {
+  border-color: rgba(79, 163, 255, 0.45);
+  box-shadow: 0 20px 70px rgba(79,163,255,0.25), 0 6px 24px rgba(0,0,0,0.7);
+}
+
+.pcard-pragmatic {
+  --card-accent: #f5c342;
+  --card-glow:   rgba(245, 195, 66, 0.6);
+}
+.pcard-pragmatic .pcard-box {
+  border-color: rgba(245, 195, 66, 0.15);
+}
+.pcard-pragmatic:hover .pcard-box {
+  border-color: rgba(245, 195, 66, 0.45);
+  box-shadow: 0 20px 70px rgba(245,195,66,0.20), 0 6px 24px rgba(0,0,0,0.7);
+}
+
+.pcard-pushgaming {
+  --card-accent: #ff6820;
+  --card-glow:   rgba(255, 104, 32, 0.6);
+}
+.pcard-pushgaming .pcard-box {
+  border-color: rgba(255, 104, 32, 0.15);
+}
+.pcard-pushgaming:hover .pcard-box {
+  border-color: rgba(255, 104, 32, 0.45);
+  box-shadow: 0 20px 70px rgba(255,104,32,0.25), 0 6px 24px rgba(0,0,0,0.7);
+}
+
+/* ── Ambient idle glow pulse ─────────────────────────────────────────────── */
+@keyframes idle-pulse-hacksaw {
+  0%,100% { box-shadow: 0 0 18px rgba(79,163,255,0.08), 0 4px 24px rgba(0,0,0,0.6); }
+  50%      { box-shadow: 0 0 32px rgba(79,163,255,0.18), 0 4px 24px rgba(0,0,0,0.6); }
+}
+@keyframes idle-pulse-pragmatic {
+  0%,100% { box-shadow: 0 0 18px rgba(245,195,66,0.08), 0 4px 24px rgba(0,0,0,0.6); }
+  50%      { box-shadow: 0 0 32px rgba(245,195,66,0.16), 0 4px 24px rgba(0,0,0,0.6); }
+}
+@keyframes idle-pulse-pushgaming {
+  0%,100% { box-shadow: 0 0 18px rgba(255,104,32,0.08), 0 4px 24px rgba(0,0,0,0.6); }
+  50%      { box-shadow: 0 0 32px rgba(255,104,32,0.18), 0 4px 24px rgba(0,0,0,0.6); }
+}
+.pcard-hacksaw    .pcard-box { animation: idle-pulse-hacksaw    3.5s ease-in-out infinite; }
+.pcard-pragmatic  .pcard-box { animation: idle-pulse-pragmatic  4.2s ease-in-out infinite; }
+.pcard-pushgaming .pcard-box { animation: idle-pulse-pushgaming 3.8s ease-in-out infinite; }
+
+.pcard:hover .pcard-box { animation: none !important; }
+
+/* ── Coming-soon section ─────────────────────────────────────────────────── */
+.coming-soon-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  border-top: 1px solid var(--border);
+}
+.coming-soon-section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 40px 0 16px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.coming-soon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cs-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.cs-chip span {
+  font-size: 11px;
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: var(--surface-3);
+  color: var(--text-dim);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 800px) {
+  .providers-arena {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 40px 20px 60px;
+    min-height: unset;
+  }
+  .pcard-hacksaw, .pcard-pragmatic, .pcard-pushgaming,
+  .pcard-hacksaw:hover, .pcard-pragmatic:hover, .pcard-pushgaming:hover {
+    transform: none;
+  }
+  .pcard { flex: 0 0 100%; max-width: 380px; width: 100%; }
+  .pcard:hover { transform: translateY(-4px) scale(1.01) !important; }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .pcard, .pcard-box, .pcard-logo, .pcard-name, .pcard-ring { transition: none !important; animation: none !important; }
+}
+</style>
 </head>
 <body>
 
@@ -28,56 +404,91 @@
 
 <main>
 
-  <!-- ── Provider Picker ── -->
-  <div class="provider-picker-hero">
+  <div class="providers-page-hero">
     <h1>Choose a Provider</h1>
-    <p>Select a studio below to browse their full slot library.</p>
+    <p>Select a studio to browse their full slot library.</p>
   </div>
 
-  <div class="provider-pick-grid">
+  <div class="providers-arena">
 
-    <a href="hacksaw.html" class="provider-pick-card pick-hacksaw" aria-label="Browse Hacksaw Gaming slots">
-      <div class="pick-content">
-        <div class="pick-icon">🎮</div>
-        <div class="pick-name">Hacksaw Gaming</div>
-        <div class="pick-score">⭐ 9.2 / 10</div>
-        <div class="pick-count" id="hacksaw-pick-count">90 slots</div>
-        <span class="pick-cta">Browse games →</span>
+    <!-- ── Hacksaw Gaming ── -->
+    <a href="hacksaw.html" class="pcard pcard-hacksaw" aria-label="Browse Hacksaw Gaming slots">
+      <div class="pcard-fx" id="fx-hacksaw" aria-hidden="true"></div>
+      <div class="pcard-ring" aria-hidden="true"></div>
+      <div class="pcard-box">
+        <div class="pcard-rating">
+          <span class="pcard-score">9.2</span>
+          <div class="pcard-bars" id="bars-hacksaw"></div>
+        </div>
+        <div class="pcard-logo-wrap">
+          <img class="pcard-logo"
+            src="images/hacksaw_logo.png"
+            alt="Hacksaw Gaming"
+            style="filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(79,163,255,0.7));"
+            onerror="this.style.display='none'">
+        </div>
+        <h2 class="pcard-name">Hacksaw Gaming</h2>
+        <div class="pcard-meta">
+          <span class="pcard-slots" id="hacksaw-pick-count">90 slots</span>
+        </div>
+        <span class="pcard-cta">Browse games</span>
       </div>
     </a>
 
-    <a href="pragmatic.html" class="provider-pick-card pick-pragmatic" aria-label="Browse Pragmatic Play slots">
-      <div class="pick-content">
-        <div class="pick-icon">🎯</div>
-        <div class="pick-name">Pragmatic Play</div>
-        <div class="pick-score">⭐ 9.4 / 10</div>
-        <div class="pick-count" id="pragmatic-pick-count">168 slots</div>
-        <span class="pick-cta">Browse games →</span>
+    <!-- ── Pragmatic Play ── -->
+    <a href="pragmatic.html" class="pcard pcard-pragmatic" aria-label="Browse Pragmatic Play slots">
+      <div class="pcard-fx" id="fx-pragmatic" aria-hidden="true"></div>
+      <div class="pcard-ring" aria-hidden="true"></div>
+      <div class="pcard-box">
+        <div class="pcard-rating">
+          <span class="pcard-score">9.4</span>
+          <div class="pcard-bars" id="bars-pragmatic"></div>
+        </div>
+        <div class="pcard-logo-wrap">
+          <img class="pcard-logo"
+            src="https://www.pragmaticplay.com/wp-content/themes/gp-theme-basic/libs/dist/images/PP-white-logo.svg"
+            alt="Pragmatic Play"
+            style="filter: drop-shadow(0 0 10px rgba(245,195,66,0.6));"
+            onerror="this.style.display='none'">
+        </div>
+        <h2 class="pcard-name">Pragmatic Play</h2>
+        <div class="pcard-meta">
+          <span class="pcard-slots" id="pragmatic-pick-count">168 slots</span>
+        </div>
+        <span class="pcard-cta">Browse games</span>
       </div>
     </a>
 
-    <a href="push_gaming.html" class="provider-pick-card pick-pushgaming" aria-label="Browse Push Gaming slots">
-      <div class="pick-content">
-        <div class="pick-icon">🚀</div>
-        <div class="pick-name">Push Gaming</div>
-        <div class="pick-score">⭐ 9.3 / 10</div>
-        <div class="pick-count" id="pushgaming-pick-count">85 slots</div>
-        <span class="pick-cta">Browse games →</span>
+    <!-- ── Push Gaming ── -->
+    <a href="push_gaming.html" class="pcard pcard-pushgaming" aria-label="Browse Push Gaming slots">
+      <div class="pcard-fx" id="fx-pushgaming" aria-hidden="true"></div>
+      <div class="pcard-ring" aria-hidden="true"></div>
+      <div class="pcard-box">
+        <div class="pcard-rating">
+          <span class="pcard-score">9.3</span>
+          <div class="pcard-bars" id="bars-pushgaming"></div>
+        </div>
+        <div class="pcard-logo-wrap">
+          <img class="pcard-logo"
+            src="images/pushgaming_logo.png"
+            alt="Push Gaming"
+            style="filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,104,32,0.7));"
+            onerror="this.style.display='none'">
+        </div>
+        <h2 class="pcard-name">Push Gaming</h2>
+        <div class="pcard-meta">
+          <span class="pcard-slots" id="pushgaming-pick-count">85 slots</span>
+        </div>
+        <span class="pcard-cta">Browse games</span>
       </div>
     </a>
 
   </div>
 
-  <!-- ── More Providers ── -->
-  <div class="page-content" style="padding-top:56px;">
-    <div class="section-header">
-      <h2 class="section-title">More Providers</h2>
-      <span style="font-size:13px; color:var(--text-muted);">Coming soon</span>
-    </div>
-    <p style="color:var(--text-muted); font-size:14px; margin-bottom:24px;">
-      Additional providers are being added. Check back soon for expanded coverage.
-    </p>
-    <div class="providers-grid" id="more-providers-grid"></div>
+  <!-- ── Coming Soon ── -->
+  <div class="coming-soon-section">
+    <h2>More Providers — Coming Soon</h2>
+    <div class="coming-soon-grid" id="cs-grid"></div>
   </div>
 
 </main>
@@ -98,26 +509,266 @@
   </div>
 </footer>
 
+<script src="js/data.js"></script>
 <script>
-  const comingSoon = [
-    { name: "Play'n GO",        icon: "🃏", count: "200+" },
-    { name: "NetEnt",           icon: "🎲", count: "300+" },
-    { name: "Big Time Gaming",  icon: "⚡", count: "50+"  },
-    { name: "Nolimit City",     icon: "🔥", count: "60+"  },
+/* ─── Signal bars ───────────────────────────────────────────────────────── */
+function buildBars(containerId, score) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const filled = Math.round(score);
+  el.innerHTML = Array.from({length: 10}, (_, i) =>
+    `<div class="pcard-bar${i < filled ? ' lit' : ''}"></div>`
+  ).join('');
+}
+buildBars('bars-hacksaw',    9.2);
+buildBars('bars-pragmatic',  9.4);
+buildBars('bars-pushgaming', 9.3);
 
-    { name: "Relax Gaming",     icon: "🎯", count: "100+" },
-    { name: "Thunderkick",      icon: "⚡", count: "30+"  },
-  ];
-  document.getElementById("more-providers-grid").innerHTML = comingSoon.map(p => `
-    <div class="provider-card">
-      <div class="provider-card-logo">${p.icon}</div>
-      <div class="provider-card-info">
-        <div class="provider-card-name">${p.name}</div>
-        <div class="provider-card-count">${p.count} games</div>
-      </div>
-      <span class="coming-soon-badge">Soon</span>
-    </div>
-  `).join("");
+/* ─── Slot counts from live data ─────────────────────────────────────────── */
+if (typeof getSlotsByProvider === 'function') {
+  const hc = getSlotsByProvider('hacksaw').length;
+  const pc = getSlotsByProvider('pragmatic').length;
+  const pgc = getSlotsByProvider('pushgaming').length;
+  if (hc)  document.getElementById('hacksaw-pick-count').textContent   = hc  + ' slots';
+  if (pc)  document.getElementById('pragmatic-pick-count').textContent  = pc  + ' slots';
+  if (pgc) document.getElementById('pushgaming-pick-count').textContent = pgc + ' slots';
+}
+
+/* ─── Coming Soon chips ──────────────────────────────────────────────────── */
+const comingSoon = [
+  "Play'n GO", "NetEnt", "Big Time Gaming", "Nolimit City", "Relax Gaming", "Thunderkick",
+];
+document.getElementById('cs-grid').innerHTML = comingSoon.map(n =>
+  `<div class="cs-chip">${n}<span>Soon</span></div>`
+).join('');
+
+/* ─── Particle system ────────────────────────────────────────────────────── */
+/* Each card has its own canvas. Particles are typed by provider theme:       */
+/* hacksaw  → lightning sparks (white-blue, shoot outward)                    */
+/* pragmatic→ golden fire (teardrops rise from base)                          */
+/* pushgaming→ fire embers (orange/red, rise + drift)                         */
+
+const providers = [
+  {
+    id: 'hacksaw',
+    type: 'lightning',
+    colors: ['#ffffff', '#8ecfff', '#4fa3ff', '#c8e8ff'],
+    hoverColors: ['#ffffff', '#ffffff', '#8ecfff', '#4fa3ff'],
+  },
+  {
+    id: 'pragmatic',
+    type: 'fire',
+    colors: ['#f5c342', '#e8a020', '#ffd700', '#ff8c00'],
+    hoverColors: ['#fff7a0', '#ffd700', '#f5c342', '#ff8c00'],
+  },
+  {
+    id: 'pushgaming',
+    type: 'fire',
+    colors: ['#ff6820', '#ff4400', '#ff8840', '#cc2200'],
+    hoverColors: ['#ffaa44', '#ff6820', '#ff4400', '#ff2200'],
+  },
+];
+
+function rand(min, max) { return Math.random() * (max - min) + min; }
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+class ParticleSystem {
+  constructor(fxEl, cardEl, config) {
+    this.fxEl    = fxEl;
+    this.cardEl  = cardEl;
+    this.config  = config;
+    this.hovering = false;
+    this.particles = [];
+    this.raf = null;
+    this.canvas = document.createElement('canvas');
+    this.ctx    = this.canvas.getContext('2d');
+    this.fxEl.appendChild(this.canvas);
+    this.resize();
+    this.ro = new ResizeObserver(() => this.resize());
+    this.ro.observe(this.fxEl);
+    this.cardEl.addEventListener('mouseenter', () => { this.hovering = true; });
+    this.cardEl.addEventListener('mouseleave', () => { this.hovering = false; });
+    this.start();
+  }
+
+  resize() {
+    const r = this.fxEl.getBoundingClientRect();
+    this.W = r.width  || 420;
+    this.H = r.height || 560;
+    this.canvas.width  = this.W;
+    this.canvas.height = this.H;
+    // Card bounds within the fx container (fx has -40px inset)
+    this.pad = 40;
+    this.cW  = this.W - this.pad * 2;
+    this.cH  = this.H - this.pad * 2;
+  }
+
+  spawnRate() {
+    return this.hovering
+      ? (this.config.type === 'lightning' ? 0.6 : 0.5)
+      : (this.config.type === 'lightning' ? 0.12 : 0.08);
+  }
+
+  spawn() {
+    const { pad, cW, cH, config } = this;
+    const colors = this.hovering ? config.hoverColors : config.colors;
+    const color  = pick(colors);
+
+    if (config.type === 'fire') {
+      // Spawn along the bottom edge of the card
+      const side = Math.random() < 0.7 ? 'bottom' : (Math.random() < 0.5 ? 'left' : 'right');
+      let x, y;
+      if (side === 'bottom') {
+        x = pad + rand(cW * 0.05, cW * 0.95);
+        y = pad + cH + rand(0, 6);
+      } else if (side === 'left') {
+        x = pad + rand(-6, 6);
+        y = pad + rand(cH * 0.4, cH);
+      } else {
+        x = pad + cW + rand(-6, 6);
+        y = pad + rand(cH * 0.4, cH);
+      }
+      const size  = this.hovering ? rand(4, 14) : rand(3, 9);
+      const speed = this.hovering ? rand(1.2, 3.5) : rand(0.7, 2.0);
+      this.particles.push({
+        x, y, size, color,
+        vx: rand(-0.6, 0.6),
+        vy: -speed,
+        life: 1, decay: rand(0.008, 0.022),
+        type: 'fire',
+      });
+    } else {
+      // Lightning — spawn on card border, shoot outward
+      const edge = Math.floor(Math.random() * 4);
+      let x, y, vx, vy;
+      const speed = this.hovering ? rand(2.5, 7) : rand(1.5, 4);
+      const spread = this.hovering ? rand(-1.5, 1.5) : rand(-0.8, 0.8);
+      if (edge === 0) { // top
+        x = pad + rand(0, cW); y = pad;
+        vx = spread; vy = -speed;
+      } else if (edge === 1) { // right
+        x = pad + cW; y = pad + rand(0, cH);
+        vx = speed; vy = spread;
+      } else if (edge === 2) { // bottom
+        x = pad + rand(0, cW); y = pad + cH;
+        vx = spread; vy = speed;
+      } else { // left
+        x = pad; y = pad + rand(0, cH);
+        vx = -speed; vy = spread;
+      }
+      const size = this.hovering ? rand(1.5, 5) : rand(1, 3);
+      this.particles.push({
+        x, y, size, color,
+        vx, vy,
+        life: 1, decay: rand(0.04, 0.12),
+        type: 'lightning',
+        trail: [{x, y}],
+      });
+    }
+  }
+
+  update() {
+    // Spawn
+    if (Math.random() < this.spawnRate()) this.spawn();
+    if (this.hovering && Math.random() < this.spawnRate() * 0.5) this.spawn();
+
+    // Update
+    this.particles = this.particles.filter(p => p.life > 0);
+    for (const p of this.particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.type === 'fire') {
+        p.vx += rand(-0.08, 0.08);   // horizontal flicker
+        p.vy *= 0.98;                  // slight drag
+        p.size *= 0.97;
+      } else {
+        if (p.trail) { p.trail.push({x: p.x, y: p.y}); if (p.trail.length > 6) p.trail.shift(); }
+      }
+      p.life -= p.decay;
+    }
+  }
+
+  draw() {
+    const { ctx, W, H } = this;
+    ctx.clearRect(0, 0, W, H);
+
+    for (const p of this.particles) {
+      ctx.save();
+      ctx.globalAlpha = Math.max(0, p.life);
+
+      if (p.type === 'fire') {
+        // Teardrop / flame shape
+        const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size);
+        grd.addColorStop(0, p.color);
+        grd.addColorStop(0.5, p.color + '99');
+        grd.addColorStop(1, 'transparent');
+        ctx.beginPath();
+        ctx.ellipse(p.x, p.y, p.size * 0.6, p.size, 0, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+        // bright core
+        ctx.beginPath();
+        ctx.arc(p.x, p.y + p.size * 0.2, p.size * 0.25, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffffbb';
+        ctx.fill();
+      } else {
+        // Lightning trail
+        if (p.trail && p.trail.length > 1) {
+          ctx.strokeStyle = p.color;
+          ctx.lineWidth = p.size * 0.5;
+          ctx.shadowColor = p.color;
+          ctx.shadowBlur = p.size * 4;
+          ctx.beginPath();
+          ctx.moveTo(p.trail[0].x, p.trail[0].y);
+          for (let i = 1; i < p.trail.length; i++) ctx.lineTo(p.trail[i].x, p.trail[i].y);
+          ctx.stroke();
+        }
+        // Spark head
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = p.size * 6;
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    // On hover: add a border arc shimmer for lightning
+    if (this.hovering && this.config.type === 'lightning') {
+      const { pad, cW, cH } = this;
+      const t = Date.now() / 600;
+      ctx.save();
+      ctx.globalAlpha = 0.35 + Math.sin(t) * 0.15;
+      ctx.strokeStyle = '#8ecfff';
+      ctx.lineWidth   = 1.5;
+      ctx.shadowColor = '#4fa3ff';
+      ctx.shadowBlur  = 14;
+      ctx.beginPath();
+      ctx.roundRect(pad, pad, cW, cH, 24);
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+
+  frame() {
+    this.update();
+    this.draw();
+    this.raf = requestAnimationFrame(() => this.frame());
+  }
+
+  start() {
+    this.frame();
+  }
+}
+
+// Initialise particle systems for each card
+providers.forEach(({ id, type, colors, hoverColors }) => {
+  const fxEl   = document.getElementById(`fx-${id}`);
+  const cardEl = fxEl?.closest('.pcard');
+  if (!fxEl || !cardEl) return;
+  new ParticleSystem(fxEl, cardEl, { type, colors, hoverColors });
+});
 </script>
 </body>
 </html>
