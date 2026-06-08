@@ -72,11 +72,13 @@ function renderCompareBar() {
         <div class="compare-bar-label">Compare</div>
         <div class="compare-bar-slots" id="compare-bar-slots"></div>
         <div class="compare-bar-actions">
-          <button class="compare-clear-btn" id="compare-clear-btn">Clear All</button>
+          <button class="compare-now-btn" id="compare-now-btn">Compare Now →</button>
+          <button class="compare-clear-btn" id="compare-clear-btn">Clear</button>
         </div>
       </div>`;
     document.body.appendChild(bar);
     document.getElementById('compare-clear-btn').addEventListener('click', clearCompare);
+    document.getElementById('compare-now-btn').addEventListener('click', openCompareModal);
   }
 
   const slotsEl = document.getElementById('compare-bar-slots');
@@ -353,6 +355,85 @@ function initSearch({ gridId, countId, inputId, providerChipsId }) {
   }
 }
 
+// ── Compare Overlay ───────────────────────────────────────────────────────────
+function openCompareModal() {
+  if (compareList.length < 2) return;
+
+  const slots = compareList.map(slug => SLOTS.find(s => s.slug === slug)).filter(Boolean);
+
+  function colHTML(s) {
+    const hero = s.hero_url
+      ? `<img src="${s.hero_url}" alt="${s.name}" onerror="this.parentElement.innerHTML='<div class=cmp-hero-placeholder>🎰</div>'">`
+      : `<div class="cmp-hero-placeholder">🎰</div>`;
+
+    const rtpPct = s.rtp ? Math.max(0, Math.min(100, (parseFloat(s.rtp) - 90) / 8 * 100)).toFixed(1) : null;
+
+    const stats = [
+      { label: 'RTP', value: s.rtp || '—', sub: rtpPct ? `<div class="rtp-gauge"><div class="rtp-gauge-fill" style="width:${rtpPct}%"></div></div>` : '' },
+      { label: 'Volatility', value: s.volatility || '—', sub: volBarsHTML(s.volatility) },
+      { label: 'Max Win', value: s.max_win || '—', sub: '' },
+    ].map(st => `
+      <div class="cmp-stat">
+        <div class="cmp-stat-value${!s.rtp && st.label==='RTP' ? ' na' : ''}">${st.value}</div>
+        <div class="cmp-stat-label">${st.label}</div>
+        ${st.sub}
+      </div>`).join('');
+
+    const tagsHTML = s.tags.slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('');
+
+    const featuresHTML = s.features && s.features.length
+      ? s.features.slice(0, 4).map(f => `
+          <div class="cmp-feature">
+            <div class="cmp-feature-title">${f.title}</div>
+            <div class="cmp-feature-desc">${f.description}</div>
+          </div>`).join('')
+      : `<p class="cmp-no-data">No feature data available</p>`;
+
+    return `
+      <div class="cmp-col">
+        <div class="cmp-hero">${hero}</div>
+        <div class="cmp-col-body">
+          <div class="cmp-provider">${s.provider_name}</div>
+          <h3 class="cmp-name">${s.name}</h3>
+          <div class="cmp-stats">${stats}</div>
+          ${tagsHTML ? `<div class="cmp-tags">${tagsHTML}</div>` : ''}
+          <div class="cmp-section-title">Features</div>
+          <div class="cmp-features">${featuresHTML}</div>
+          ${s.release_date ? `<div class="cmp-release">Released ${s.release_date}</div>` : ''}
+        </div>
+      </div>`;
+  }
+
+  let overlay = document.getElementById('compare-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'compare-overlay';
+    overlay.className = 'compare-overlay';
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeCompareModal(); });
+  }
+
+  overlay.innerHTML = `
+    <div class="compare-modal">
+      <div class="compare-modal-header">
+        <h2 class="compare-modal-title">Side-by-Side Comparison</h2>
+        <button class="compare-modal-close" onclick="closeCompareModal()">✕</button>
+      </div>
+      <div class="compare-cols" data-count="${slots.length}">
+        ${slots.map(colHTML).join('')}
+      </div>
+    </div>`;
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCompareModal() {
+  const overlay = document.getElementById('compare-overlay');
+  if (overlay) overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 // ── Search Dropdown ───────────────────────────────────────────────────────────
 function initSearchDropdown(inputId, wrapSelector) {
   const input = document.getElementById(inputId);
@@ -413,4 +494,4 @@ function initSearchDropdown(inputId, wrapSelector) {
 }
 
 // Expose for inline scripts
-window.SlotWiki = { renderGrid, initModal, initSearch, searchSlots, openModal, toggleCompare, clearCompare, initSearchDropdown };
+window.SlotWiki = { renderGrid, initModal, initSearch, searchSlots, openModal, toggleCompare, clearCompare, openCompareModal, closeCompareModal, initSearchDropdown };
